@@ -104,16 +104,55 @@ class ClockPainter extends CustomPainter {
     double outerRadius = radius - 20;
     double innerRdaius = radius - 30;
     DateTime datetime = DateTime.now();
+
+    //second hand
     Paint secLinePaint = Paint()
       ..color = Colors.red
       ..strokeWidth = 3
       ..strokeCap = StrokeCap.round;
 
     Offset secEndOffset = Offset(
+      centerX + 15 * cos(datetime.second * 6 * pi / 180),
+      centerY + 15 * sin(datetime.second * 6 * pi / 180),
+    );
+    Offset secStartOffset = Offset(
       centerX - outerRadius * cos(datetime.second * 6 * pi / 180),
       centerY - outerRadius * sin(datetime.second * 6 * pi / 180),
     );
-    canvas.drawLine(center, secEndOffset, secLinePaint);
+    canvas.drawLine(secStartOffset, secEndOffset, secLinePaint);
+
+//minute hand
+    Paint minLinePaint = Paint()
+      ..color = Color(0xFFBEC5D5)
+      ..strokeWidth = 4
+      ..strokeCap = StrokeCap.round;
+
+    Offset minEndOffset = Offset(
+      centerX - outerRadius * .6 * cos(datetime.minute * 6 * pi / 180),
+      centerY - outerRadius * .6 * sin(datetime.minute * 6 * pi / 180),
+    );
+    Offset minStartOffset = Offset(
+      centerX + 15 * cos(datetime.minute * 6 * pi / 180),
+      centerY + 15 * sin(datetime.minute * 6 * pi / 180),
+    );
+    canvas.drawLine(minStartOffset, minEndOffset, minLinePaint);
+
+//hour hand
+
+    Paint hourLinePaint = Paint()
+      ..color = Color(0xFF222E63)
+      ..strokeWidth = 6
+      ..strokeCap = StrokeCap.round;
+
+    Offset hourEndOffset = Offset(
+      centerX - outerRadius * .4 * cos(datetime.hour * 6 * pi / 180),
+      centerY - outerRadius * .4 * sin(datetime.hour * 6 * pi / 180),
+    );
+    Offset hourStartOffset = Offset(
+      centerX + 15 * cos(datetime.hour * 6 * pi / 180),
+      centerY + 15 * sin(datetime.hour * 6 * pi / 180),
+    );
+    canvas.drawLine(hourStartOffset, hourEndOffset, hourLinePaint);
   }
 
   @override
