@@ -1,0 +1,186 @@
+{
+    "sourceFile": "lib/clock.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 42,
+            "patches": [
+                {
+                    "date": 1643014287416,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1643014332839,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,8 +10,9 @@\n class _ClockState extends State<Clock> {\r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return Container(\r\n+      color: Colors.red,\r\n       width: 300,\r\n       height: 300,\r\n       child: Stack(\r\n         children: [],\r\n"
+                },
+                {
+                    "date": 1643014395428,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,13 +10,16 @@\n class _ClockState extends State<Clock> {\r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return Container(\r\n-      color: Colors.red,\r\n       width: 300,\r\n       height: 300,\r\n       child: Stack(\r\n-        children: [],\r\n+        children: [\r\n+          Container(\r\n+            decoration: BoxDecoration(shape: BoxShape.circle),\r\n+          )\r\n+        ],\r\n       ),\r\n     );\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1643014409855,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,8 +15,9 @@\n       height: 300,\r\n       child: Stack(\r\n         children: [\r\n           Container(\r\n+            color: Colors.re,\r\n             decoration: BoxDecoration(shape: BoxShape.circle),\r\n           )\r\n         ],\r\n       ),\r\n"
+                },
+                {
+                    "date": 1643014454675,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,14 +10,14 @@\n class _ClockState extends State<Clock> {\r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return Container(\r\n+      color: Colors.red,\r\n       width: 300,\r\n       height: 300,\r\n       child: Stack(\r\n         children: [\r\n           Container(\r\n-            color: Colors.re,\r\n             decoration: BoxDecoration(shape: BoxShape.circle),\r\n           )\r\n         ],\r\n       ),\r\n"
+                },
+                {
+                    "date": 1643014541825,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,6 @@\n+// ignore_for_file: prefer_const_constructors\r\n+\r\n import 'package:flutter/material.dart';\r\n \r\n class Clock extends StatefulWidget {\r\n   const Clock({Key? key}) : super(key: key);\r\n@@ -16,9 +18,13 @@\n       height: 300,\r\n       child: Stack(\r\n         children: [\r\n           Container(\r\n-            decoration: BoxDecoration(shape: BoxShape.circle),\r\n+            decoration: BoxDecoration(\r\n+              shape: BoxShape.circle,\r\n+              gradient: LinearGradient(\r\n+                  begin: Alignment.topLeft, end: Alignment.bottomRight),\r\n+            ),\r\n           )\r\n         ],\r\n       ),\r\n     );\r\n"
+                },
+                {
+                    "date": 1643014600181,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,11 @@\n           Container(\r\n             decoration: BoxDecoration(\r\n               shape: BoxShape.circle,\r\n               gradient: LinearGradient(\r\n-                  begin: Alignment.topLeft, end: Alignment.bottomRight),\r\n+                  colors: [Color(0xFFECF6)],\r\n+                  begin: Alignment.topLeft,\r\n+                  end: Alignment.bottomRight),\r\n             ),\r\n           )\r\n         ],\r\n       ),\r\n"
+                },
+                {
+                    "date": 1643014622368,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,12 +20,11 @@\n         children: [\r\n           Container(\r\n             decoration: BoxDecoration(\r\n               shape: BoxShape.circle,\r\n-              gradient: LinearGradient(\r\n-                  colors: [Color(0xFFECF6)],\r\n-                  begin: Alignment.topLeft,\r\n-                  end: Alignment.bottomRight),\r\n+              gradient: LinearGradient(colors: [\r\n+                Color(0xFFECF6),\r\n+              ], begin: Alignment.topLeft, end: Alignment.bottomRight),\r\n             ),\r\n           )\r\n         ],\r\n       ),\r\n"
+                },
+                {
+                    "date": 1643014658594,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-// ignore_for_file: prefer_const_constructors\r\n+// ignore_for_file: prefer_const_constructors, use_full_hex_values_for_flutter_colors\r\n \r\n import 'package:flutter/material.dart';\r\n \r\n class Clock extends StatefulWidget {\r\n@@ -20,11 +20,13 @@\n         children: [\r\n           Container(\r\n             decoration: BoxDecoration(\r\n               shape: BoxShape.circle,\r\n-              gradient: LinearGradient(colors: [\r\n-                Color(0xFFECF6),\r\n-              ], begin: Alignment.topLeft, end: Alignment.bottomRight),\r\n+              // ignore: prefer_const_literals_to_create_immutables\r\n+              gradient: LinearGradient(\r\n+                  colors: [Color(0xFFECF6), Color(0xFFCADBEB)],\r\n+                  begin: Alignment.topLeft,\r\n+                  end: Alignment.bottomRight),\r\n             ),\r\n           )\r\n         ],\r\n       ),\r\n"
+                },
+                {
+                    "date": 1643014705216,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-// ignore_for_file: prefer_const_constructors, use_full_hex_values_for_flutter_colors\r\n+// ignore_for_file: prefer_const_constructors, use_full_hex_values_for_flutter_colors, prefer_const_literals_to_create_immutables\r\n \r\n import 'package:flutter/material.dart';\r\n \r\n class Clock extends StatefulWidget {\r\n@@ -20,9 +20,8 @@\n         children: [\r\n           Container(\r\n             decoration: BoxDecoration(\r\n               shape: BoxShape.circle,\r\n-              // ignore: prefer_const_literals_to_create_immutables\r\n               gradient: LinearGradient(\r\n                   colors: [Color(0xFFECF6), Color(0xFFCADBEB)],\r\n                   begin: Alignment.topLeft,\r\n                   end: Alignment.bottomRight),\r\n"
+                },
+                {
+                    "date": 1643014732940,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,8 +17,9 @@\n       width: 300,\r\n       height: 300,\r\n       child: Stack(\r\n         children: [\r\n+          Text('data'),\r\n           Container(\r\n             decoration: BoxDecoration(\r\n               shape: BoxShape.circle,\r\n               gradient: LinearGradient(\r\n"
+                },
+                {
+                    "date": 1643014747590,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,14 +12,13 @@\n class _ClockState extends State<Clock> {\r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return Container(\r\n-      color: Colors.red,\r\n+      // color: Colors.red,\r\n       width: 300,\r\n       height: 300,\r\n       child: Stack(\r\n         children: [\r\n-          Text('data'),\r\n           Container(\r\n             decoration: BoxDecoration(\r\n               shape: BoxShape.circle,\r\n               gradient: LinearGradient(\r\n"
+                },
+                {
+                    "date": 1643014874485,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,14 +19,18 @@\n       child: Stack(\r\n         children: [\r\n           Container(\r\n             decoration: BoxDecoration(\r\n-              shape: BoxShape.circle,\r\n-              gradient: LinearGradient(\r\n-                  colors: [Color(0xFFECF6), Color(0xFFCADBEB)],\r\n-                  begin: Alignment.topLeft,\r\n-                  end: Alignment.bottomRight),\r\n-            ),\r\n+                shape: BoxShape.circle,\r\n+                gradient: LinearGradient(\r\n+                    colors: [Color(0xFFECF6), Color(0xFFCADBEB)],\r\n+                    begin: Alignment.topLeft,\r\n+                    end: Alignment.bottomRight),\r\n+                boxShadow: [\r\n+                  BoxShadow(\r\n+                    color: Color(0xFF3F6080).withOpacity(.2),\r\n+                  ),\r\n+                ]),\r\n           )\r\n         ],\r\n       ),\r\n     );\r\n"
+                },
+                {
+                    "date": 1643014918874,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,10 +26,11 @@\n                     begin: Alignment.topLeft,\r\n                     end: Alignment.bottomRight),\r\n                 boxShadow: [\r\n                   BoxShadow(\r\n-                    color: Color(0xFF3F6080).withOpacity(.2),\r\n-                  ),\r\n+                      color: Color(0xFF3F6080).withOpacity(.2),\r\n+                      blurRadius: 32,\r\n+                      offset: Offset(40, 20)),\r\n                 ]),\r\n           )\r\n         ],\r\n       ),\r\n"
+                },
+                {
+                    "date": 1643015002136,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,19 +19,20 @@\n       child: Stack(\r\n         children: [\r\n           Container(\r\n             decoration: BoxDecoration(\r\n-                shape: BoxShape.circle,\r\n-                gradient: LinearGradient(\r\n-                    colors: [Color(0xFFECF6), Color(0xFFCADBEB)],\r\n-                    begin: Alignment.topLeft,\r\n-                    end: Alignment.bottomRight),\r\n-                boxShadow: [\r\n-                  BoxShadow(\r\n-                      color: Color(0xFF3F6080).withOpacity(.2),\r\n-                      blurRadius: 32,\r\n-                      offset: Offset(40, 20)),\r\n-                ]),\r\n+              shape: BoxShape.circle,\r\n+              gradient: LinearGradient(\r\n+                  colors: [Color(0xFFECF6), Color(0xFFCADBEB)],\r\n+                  begin: Alignment.topLeft,\r\n+                  end: Alignment.bottomRight),\r\n+              boxShadow: [\r\n+                BoxShadow(\r\n+                    color: Color(0xFF3F6080).withOpacity(.2),\r\n+                    blurRadius: 32,\r\n+                    offset: Offset(40, 20)),\r\n+              ],\r\n+            ),\r\n           )\r\n         ],\r\n       ),\r\n     );\r\n"
+                },
+                {
+                    "date": 1643015007890,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,11 +26,12 @@\n                   begin: Alignment.topLeft,\r\n                   end: Alignment.bottomRight),\r\n               boxShadow: [\r\n                 BoxShadow(\r\n-                    color: Color(0xFF3F6080).withOpacity(.2),\r\n-                    blurRadius: 32,\r\n-                    offset: Offset(40, 20)),\r\n+                  color: Color(0xFF3F6080).withOpacity(.2),\r\n+                  blurRadius: 32,\r\n+                  offset: Offset(40, 20),\r\n+                ),\r\n               ],\r\n             ),\r\n           )\r\n         ],\r\n"
+                },
+                {
+                    "date": 1643015041818,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,8 +30,13 @@\n                   color: Color(0xFF3F6080).withOpacity(.2),\r\n                   blurRadius: 32,\r\n                   offset: Offset(40, 20),\r\n                 ),\r\n+                BoxShadow(\r\n+                  color: Color(0xFFFFFF),\r\n+                  blurRadius: 32,\r\n+                  offset: Offset(40, 20),\r\n+                ),\r\n               ],\r\n             ),\r\n           )\r\n         ],\r\n"
+                },
+                {
+                    "date": 1643015060608,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,9 +33,9 @@\n                 ),\r\n                 BoxShadow(\r\n                   color: Color(0xFFFFFF),\r\n                   blurRadius: 32,\r\n-                  offset: Offset(40, 20),\r\n+                  offset: Offset(-20, -10),\r\n                 ),\r\n               ],\r\n             ),\r\n           )\r\n"
+                },
+                {
+                    "date": 1643015094041,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n                   blurRadius: 32,\r\n                   offset: Offset(40, 20),\r\n                 ),\r\n                 BoxShadow(\r\n-                  color: Color(0xFFFFFF),\r\n+                  color: Color(0xFFFFFFFF),\r\n                   blurRadius: 32,\r\n                   offset: Offset(-20, -10),\r\n                 ),\r\n               ],\r\n"
+                },
+                {
+                    "date": 1643015167757,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,11 +21,12 @@\n           Container(\r\n             decoration: BoxDecoration(\r\n               shape: BoxShape.circle,\r\n               gradient: LinearGradient(\r\n-                  colors: [Color(0xFFECF6), Color(0xFFCADBEB)],\r\n-                  begin: Alignment.topLeft,\r\n-                  end: Alignment.bottomRight),\r\n+                begin: Alignment.topLeft,\r\n+                end: Alignment.bottomRight,\r\n+                colors: [Color(0xFFECF6), Color(0xFFCADBEB)],\r\n+              ),\r\n               boxShadow: [\r\n                 BoxShadow(\r\n                   color: Color(0xFF3F6080).withOpacity(.2),\r\n                   blurRadius: 32,\r\n"
+                },
+                {
+                    "date": 1643015224513,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,8 +18,9 @@\n       height: 300,\r\n       child: Stack(\r\n         children: [\r\n           Container(\r\n+            constraints: BoxConstraints.expand(),\r\n             decoration: BoxDecoration(\r\n               shape: BoxShape.circle,\r\n               gradient: LinearGradient(\r\n                 begin: Alignment.topLeft,\r\n"
+                },
+                {
+                    "date": 1643015249605,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,9 +39,32 @@\n                   offset: Offset(-20, -10),\r\n                 ),\r\n               ],\r\n             ),\r\n-          )\r\n+          ),\r\n+          Container(\r\n+            constraints: BoxConstraints.expand(),\r\n+            decoration: BoxDecoration(\r\n+              shape: BoxShape.circle,\r\n+              gradient: LinearGradient(\r\n+                begin: Alignment.topLeft,\r\n+                end: Alignment.bottomRight,\r\n+                colors: [Color(0xFFECF6), Color(0xFFCADBEB)],\r\n+              ),\r\n+              boxShadow: [\r\n+                BoxShadow(\r\n+                  color: Color(0xFF3F6080).withOpacity(.2),\r\n+                  blurRadius: 32,\r\n+                  offset: Offset(40, 20),\r\n+                ),\r\n+                BoxShadow(\r\n+                  color: Color(0xFFFFFFFF),\r\n+                  blurRadius: 32,\r\n+                  offset: Offset(-20, -10),\r\n+                ),\r\n+              ],\r\n+            ),\r\n+          ),\r\n         ],\r\n       ),\r\n     );\r\n   }\r\n"
+                },
+                {
+                    "date": 1643015277279,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,9 +41,10 @@\n               ],\r\n             ),\r\n           ),\r\n           Container(\r\n-            constraints: BoxConstraints.expand(),\r\n+            width: 200,\r\n+            height: 200,\r\n             decoration: BoxDecoration(\r\n               shape: BoxShape.circle,\r\n               gradient: LinearGradient(\r\n                 begin: Alignment.topLeft,\r\n"
+                },
+                {
+                    "date": 1643015342056,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n // ignore_for_file: prefer_const_constructors, use_full_hex_values_for_flutter_colors, prefer_const_literals_to_create_immutables\r\n \r\n import 'package:flutter/material.dart';\r\n+import 'package:flutter/widgets.dart';\r\n \r\n class Clock extends StatefulWidget {\r\n   const Clock({Key? key}) : super(key: key);\r\n \r\n@@ -16,8 +17,9 @@\n       // color: Colors.red,\r\n       width: 300,\r\n       height: 300,\r\n       child: Stack(\r\n+        alignment: Alignment.center,\r\n         children: [\r\n           Container(\r\n             constraints: BoxConstraints.expand(),\r\n             decoration: BoxDecoration(\r\n"
+                },
+                {
+                    "date": 1643015369397,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n               boxShadow: [\r\n                 BoxShadow(\r\n                   color: Color(0xFF3F6080).withOpacity(.2),\r\n                   blurRadius: 32,\r\n-                  offset: Offset(40, 20),\r\n+                  offset: Offset(10, 5),\r\n                 ),\r\n                 BoxShadow(\r\n                   color: Color(0xFFFFFFFF),\r\n                   blurRadius: 32,\r\n"
+                },
+                {
+                    "date": 1643015384249,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,9 +37,9 @@\n                 ),\r\n                 BoxShadow(\r\n                   color: Color(0xFFFFFFFF),\r\n                   blurRadius: 32,\r\n-                  offset: Offset(-20, -10),\r\n+                  offset: Offset(-10, -5),\r\n                 ),\r\n               ],\r\n             ),\r\n           ),\r\n"
+                },
+                {
+                    "date": 1643015485750,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n               shape: BoxShape.circle,\r\n               gradient: LinearGradient(\r\n                 begin: Alignment.topLeft,\r\n                 end: Alignment.bottomRight,\r\n-                colors: [Color(0xFFECF6), Color(0xFFCADBEB)],\r\n+                colors: [Color(0xFFE3F0F8), Color(0xFFEEF5FD)],\r\n               ),\r\n               boxShadow: [\r\n                 BoxShadow(\r\n                   color: Color(0xFF3F6080).withOpacity(.2),\r\n"
+                },
+                {
+                    "date": 1643015550237,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -50,9 +50,9 @@\n               shape: BoxShape.circle,\r\n               gradient: LinearGradient(\r\n                 begin: Alignment.topLeft,\r\n                 end: Alignment.bottomRight,\r\n-                colors: [Color(0xFFECF6), Color(0xFFCADBEB)],\r\n+                colors: [Color(0xFFE3F0F8), Color(0xFFEEF5FD)],\r\n               ),\r\n               boxShadow: [\r\n                 BoxShadow(\r\n                   color: Color(0xFF3F6080).withOpacity(.2),\r\n"
+                },
+                {
+                    "date": 1643015771674,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -66,9 +66,28 @@\n                 ),\r\n               ],\r\n             ),\r\n           ),\r\n+          Container(\r\n+            constraints: BoxConstraints.expand(),\r\n+            child: CustomPaint(\r\n+              painter: ClockPainter(),\r\n+            ),\r\n+          )\r\n         ],\r\n       ),\r\n     );\r\n   }\r\n }\r\n+\r\n+class ClockPainter extends CustomPainter {\r\n+  @override\r\n+  void paint(Canvas canvas, Size size) {\r\n+    // TODO: implement paint\r\n+  }\r\n+\r\n+  @override\r\n+  bool shouldRepaint(covariant CustomPainter oldDelegate) {\r\n+    // TODO: implement shouldRepaint\r\n+    return true;\r\n+  }\r\n+}\r\n"
+                },
+                {
+                    "date": 1643015855914,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -81,9 +81,10 @@\n \r\n class ClockPainter extends CustomPainter {\r\n   @override\r\n   void paint(Canvas canvas, Size size) {\r\n-    // TODO: implement paint\r\n+    double centerX = size.width / 2;\r\n+    double centreY=size.height/2\r\n   }\r\n \r\n   @override\r\n   bool shouldRepaint(covariant CustomPainter oldDelegate) {\r\n"
+                },
+                {
+                    "date": 1643016161470,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,8 @@\n // ignore_for_file: prefer_const_constructors, use_full_hex_values_for_flutter_colors, prefer_const_literals_to_create_immutables\r\n \r\n+import 'dart:math';\r\n+\r\n import 'package:flutter/material.dart';\r\n import 'package:flutter/widgets.dart';\r\n \r\n class Clock extends StatefulWidget {\r\n@@ -82,9 +84,16 @@\n class ClockPainter extends CustomPainter {\r\n   @override\r\n   void paint(Canvas canvas, Size size) {\r\n     double centerX = size.width / 2;\r\n-    double centreY=size.height/2\r\n+    double centerY = size.height / 2;\r\n+    double radius = min(centerX, centerY);\r\n+    Offset center = Offset(centerX, centerY);\r\n+\r\n+    Paint secLinePaint = Paint()\r\n+    ..color=Colors.red;\r\n+\r\n+    canvas.drawLine(center, Offset(100, 100), secLinePaint)\r\n   }\r\n \r\n   @override\r\n   bool shouldRepaint(covariant CustomPainter oldDelegate) {\r\n"
+                },
+                {
+                    "date": 1643016166861,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -88,12 +88,11 @@\n     double centerY = size.height / 2;\r\n     double radius = min(centerX, centerY);\r\n     Offset center = Offset(centerX, centerY);\r\n \r\n-    Paint secLinePaint = Paint()\r\n-    ..color=Colors.red;\r\n+    Paint secLinePaint = Paint()..color = Colors.red;\r\n \r\n-    canvas.drawLine(center, Offset(100, 100), secLinePaint)\r\n+    canvas.drawLine(center, Offset(100, 100), secLinePaint);\r\n   }\r\n \r\n   @override\r\n   bool shouldRepaint(covariant CustomPainter oldDelegate) {\r\n"
+                },
+                {
+                    "date": 1643016203939,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -88,9 +88,11 @@\n     double centerY = size.height / 2;\r\n     double radius = min(centerX, centerY);\r\n     Offset center = Offset(centerX, centerY);\r\n \r\n-    Paint secLinePaint = Paint()..color = Colors.red;\r\n+    Paint secLinePaint = Paint()\r\n+      ..color = Colors.red\r\n+      ..strokeWidth = 3;\r\n \r\n     canvas.drawLine(center, Offset(100, 100), secLinePaint);\r\n   }\r\n \r\n"
+                },
+                {
+                    "date": 1643016250630,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -90,9 +90,10 @@\n     Offset center = Offset(centerX, centerY);\r\n \r\n     Paint secLinePaint = Paint()\r\n       ..color = Colors.red\r\n-      ..strokeWidth = 3;\r\n+      ..strokeWidth = 3\r\n+      ..strokeCap = StrokeCap.round;\r\n \r\n     canvas.drawLine(center, Offset(100, 100), secLinePaint);\r\n   }\r\n \r\n"
+                },
+                {
+                    "date": 1643016460048,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -93,8 +93,10 @@\n       ..color = Colors.red\r\n       ..strokeWidth = 3\r\n       ..strokeCap = StrokeCap.round;\r\n \r\n+    Offset secStartOffset = Offset(centerX - radius * cos(0 * pi / 180),\r\n+        centerY - radius * cos(0 * pi / 180));\r\n     canvas.drawLine(center, Offset(100, 100), secLinePaint);\r\n   }\r\n \r\n   @override\r\n"
+                },
+                {
+                    "date": 1643016480695,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -95,9 +95,9 @@\n       ..strokeCap = StrokeCap.round;\r\n \r\n     Offset secStartOffset = Offset(centerX - radius * cos(0 * pi / 180),\r\n         centerY - radius * cos(0 * pi / 180));\r\n-    canvas.drawLine(center, Offset(100, 100), secLinePaint);\r\n+    canvas.drawLine(center, secStartOffset, secLinePaint);\r\n   }\r\n \r\n   @override\r\n   bool shouldRepaint(covariant CustomPainter oldDelegate) {\r\n"
+                },
+                {
+                    "date": 1643016593433,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -87,17 +87,18 @@\n     double centerX = size.width / 2;\r\n     double centerY = size.height / 2;\r\n     double radius = min(centerX, centerY);\r\n     Offset center = Offset(centerX, centerY);\r\n-\r\n+    double outerRadius = radius - 20;\r\n+    double innerRdaius = radius - 30;\r\n     Paint secLinePaint = Paint()\r\n       ..color = Colors.red\r\n       ..strokeWidth = 3\r\n       ..strokeCap = StrokeCap.round;\r\n \r\n-    Offset secStartOffset = Offset(centerX - radius * cos(0 * pi / 180),\r\n+    Offset secEndOffset = Offset(centerX - radius * cos(0 * pi / 180),\r\n         centerY - radius * cos(0 * pi / 180));\r\n-    canvas.drawLine(center, secStartOffset, secLinePaint);\r\n+    canvas.drawLine(center, secEndOffset, secLinePaint);\r\n   }\r\n \r\n   @override\r\n   bool shouldRepaint(covariant CustomPainter oldDelegate) {\r\n"
+                },
+                {
+                    "date": 1643016639015,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -94,10 +94,12 @@\n       ..color = Colors.red\r\n       ..strokeWidth = 3\r\n       ..strokeCap = StrokeCap.round;\r\n \r\n-    Offset secEndOffset = Offset(centerX - radius * cos(0 * pi / 180),\r\n-        centerY - radius * cos(0 * pi / 180));\r\n+    Offset secEndOffset = Offset(\r\n+      centerX - radius * cos(0 * pi / 180),\r\n+      centerY - radius * cos(0 * pi / 180),\r\n+    );\r\n     canvas.drawLine(center, secEndOffset, secLinePaint);\r\n   }\r\n \r\n   @override\r\n"
+                },
+                {
+                    "date": 1643016655892,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -95,10 +95,10 @@\n       ..strokeWidth = 3\r\n       ..strokeCap = StrokeCap.round;\r\n \r\n     Offset secEndOffset = Offset(\r\n-      centerX - radius * cos(0 * pi / 180),\r\n-      centerY - radius * cos(0 * pi / 180),\r\n+      centerX - outerRadius * cos(0 * pi / 180),\r\n+      centerY - outerRadius * sin(0 * pi / 180),\r\n     );\r\n     canvas.drawLine(center, secEndOffset, secLinePaint);\r\n   }\r\n \r\n"
+                },
+                {
+                    "date": 1643016729633,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -68,12 +68,15 @@\n                 ),\r\n               ],\r\n             ),\r\n           ),\r\n-          Container(\r\n-            constraints: BoxConstraints.expand(),\r\n-            child: CustomPaint(\r\n-              painter: ClockPainter(),\r\n+          Transform.rotate(\r\n+            angle: pi / 2,\r\n+            child: Container(\r\n+              constraints: BoxConstraints.expand(),\r\n+              child: CustomPaint(\r\n+                painter: ClockPainter(),\r\n+              ),\r\n             ),\r\n           )\r\n         ],\r\n       ),\r\n"
+                },
+                {
+                    "date": 1643016836722,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -92,15 +92,16 @@\n     double radius = min(centerX, centerY);\r\n     Offset center = Offset(centerX, centerY);\r\n     double outerRadius = radius - 20;\r\n     double innerRdaius = radius - 30;\r\n+    DateTime datetime = DateTime.now();\r\n     Paint secLinePaint = Paint()\r\n       ..color = Colors.red\r\n       ..strokeWidth = 3\r\n       ..strokeCap = StrokeCap.round;\r\n \r\n     Offset secEndOffset = Offset(\r\n-      centerX - outerRadius * cos(0 * pi / 180),\r\n+      centerX - outerRadius * cos(datetime.second * 6 * pi / 180),\r\n       centerY - outerRadius * sin(0 * pi / 180),\r\n     );\r\n     canvas.drawLine(center, secEndOffset, secLinePaint);\r\n   }\r\n"
+                },
+                {
+                    "date": 1643016858558,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -100,9 +100,9 @@\n       ..strokeCap = StrokeCap.round;\r\n \r\n     Offset secEndOffset = Offset(\r\n       centerX - outerRadius * cos(datetime.second * 6 * pi / 180),\r\n-      centerY - outerRadius * sin(0 * pi / 180),\r\n+      centerY - outerRadius * sin(datetime.second * 6 * pi / 180),\r\n     );\r\n     canvas.drawLine(center, secEndOffset, secLinePaint);\r\n   }\r\n \r\n"
+                },
+                {
+                    "date": 1643017053818,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,7 @@\n // ignore_for_file: prefer_const_constructors, use_full_hex_values_for_flutter_colors, prefer_const_literals_to_create_immutables\r\n \r\n+import 'dart:async';\r\n import 'dart:math';\r\n \r\n import 'package:flutter/material.dart';\r\n import 'package:flutter/widgets.dart';\r\n@@ -13,8 +14,17 @@\n }\r\n \r\n class _ClockState extends State<Clock> {\r\n   @override\r\n+  void initState() {\r\n+    // TODO: implement initState\r\n+    super.initState();\r\n+    Timer.periodic(Duration(seconds: 1), (timer) {\r\n+      setState(() {});\r\n+    });\r\n+  }\r\n+\r\n+  @override\r\n   Widget build(BuildContext context) {\r\n     return Container(\r\n       // color: Colors.red,\r\n       width: 300,\r\n"
+                }
+            ],
+            "date": 1643014287416,
+            "name": "Commit-0",
+            "content": "import 'package:flutter/material.dart';\r\n\r\nclass Clock extends StatefulWidget {\r\n  const Clock({Key? key}) : super(key: key);\r\n\r\n  @override\r\n  _ClockState createState() => _ClockState();\r\n}\r\n\r\nclass _ClockState extends State<Clock> {\r\n  @override\r\n  Widget build(BuildContext context) {\r\n    return Container(\r\n      width: 300,\r\n      height: 300,\r\n      child: Stack(\r\n        children: [],\r\n      ),\r\n    );\r\n  }\r\n}\r\n"
+        }
+    ]
+}
