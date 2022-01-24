@@ -105,9 +105,40 @@ class ClockPainter extends CustomPainter {
     double innerRdaius = radius - 30;
     DateTime datetime = DateTime.now();
 
+    //dashLine for second
+    Paint secDashPaint = Paint()
+      ..color = Colors.white
+      ..strokeWidth = 3
+      ..strokeCap = StrokeCap.round;
+
+    for (int i = 0; i < 360; i += 3) {
+      double x1 = centerX - outerRadius * .95 * cos(i * pi / 180);
+      double y1 = centerX - outerRadius * .95 * sin(i * pi / 180);
+
+      double x2 = centerX - innerRdaius * cos(i * pi / 180);
+      double y2 = centerX - innerRdaius * sin(i * pi / 180);
+
+      canvas.drawLine(Offset(x1, y1), Offset(x2, y2), secDashPaint);
+    }
+    //dashLine for hour
+    Paint hourDashPaint = Paint()
+      ..color = Color(0xFF222E63)
+      ..strokeWidth = 4
+      ..strokeCap = StrokeCap.round;
+
+    for (int i = 0; i < 360; i += 30) {
+      double x1 = centerX - outerRadius * cos(i * pi / 180);
+      double y1 = centerX - outerRadius * sin(i * pi / 180);
+
+      double x2 = centerX - innerRdaius * cos(i * pi / 180);
+      double y2 = centerX - innerRdaius * sin(i * pi / 180);
+
+      canvas.drawLine(Offset(x1, y1), Offset(x2, y2), hourDashPaint);
+    }
+
     //second hand
     Paint secLinePaint = Paint()
-      ..color = Colors.red
+      ..color = Color(0xFFE81466)
       ..strokeWidth = 3
       ..strokeCap = StrokeCap.round;
 
@@ -153,6 +184,10 @@ class ClockPainter extends CustomPainter {
       centerY + 15 * sin(datetime.hour * 6 * pi / 180),
     );
     canvas.drawLine(hourStartOffset, hourEndOffset, hourLinePaint);
+
+    Paint centerCirclePaint = Paint()..color = Color(0xFFE81466);
+
+    canvas.drawCircle(center, 6, centerCirclePaint);
   }
 
   @override
