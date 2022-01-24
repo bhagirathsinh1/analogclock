@@ -84,12 +84,12 @@ class ClockPainter extends CustomPainter {
       ..strokeCap = StrokeCap.round;
 
     Offset hourEndOffset = Offset(
-      centerX - outerRadius * .4 * cos(datetime.hour * 6 * pi / 180),
-      centerY - outerRadius * .4 * sin(datetime.hour * 6 * pi / 180),
+      centerX - outerRadius * .8 * cos(datetime.hour * 8 * pi / 180),
+      centerY - outerRadius * .8 * sin(datetime.hour * 10 * pi / 180),
     );
     Offset hourStartOffset = Offset(
-      centerX + 15 * cos(datetime.hour * 6 * pi / 180),
-      centerY + 15 * sin(datetime.hour * 6 * pi / 180),
+      centerX + 15 * cos(datetime.hour * 8 * pi / 180),
+      centerY + 15 * sin(datetime.hour * 10 * pi / 180),
     );
     canvas.drawLine(hourStartOffset, hourEndOffset, hourLinePaint);
 
