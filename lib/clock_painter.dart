@@ -19,7 +19,7 @@ class ClockPainter extends CustomPainter {
       ..strokeWidth = 3
       ..strokeCap = StrokeCap.round;
 
-    for (int i = 0; i < 360; i += 3) {
+    for (int i = 0; i < 360; i += 6) {
       double x1 = centerX - outerRadius * .95 * cos(i * pi / 180);
       double y1 = centerX - outerRadius * .95 * sin(i * pi / 180);
 

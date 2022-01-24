@@ -3,11 +3,15 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 0,
+            "activePatchIndex": 1,
             "patches": [
                 {
                     "date": 1643022982541,
                     "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1643024880962,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n       ..color = Colors.white\r\n       ..strokeWidth = 3\r\n       ..strokeCap = StrokeCap.round;\r\n \r\n-    for (int i = 0; i < 360; i += 3) {\r\n+    for (int i = 0; i < 360; i += 6) {\r\n       double x1 = centerX - outerRadius * .95 * cos(i * pi / 180);\r\n       double y1 = centerX - outerRadius * .95 * sin(i * pi / 180);\r\n \r\n       double x2 = centerX - innerRdaius * cos(i * pi / 180);\r\n"
                 }
             ],
             "date": 1643022982541,
