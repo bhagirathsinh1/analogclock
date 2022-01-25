@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 62,
+            "activePatchIndex": 145,
             "patches": [
                 {
                     "date": 1643022982541,
@@ -256,6 +256,338 @@
                 {
                     "date": 1643028920234,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -134,7 +134,7 @@\n       textAlign: TextAlign.center,\r\n       textDirection: TextDirection.ltr,\r\n     );\r\n     tp.layout();\r\n-    tp.paint(canvas, size.centerLeft(offset - tp.size.center(Offset.zero)));\r\n+    tp.paint(canvas, size.center(offset - tp.size.center(Offset.zero)));\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1643088453231,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -90,10 +90,10 @@\n       ..strokeWidth = 6\r\n       ..strokeCap = StrokeCap.round;\r\n \r\n     Offset hourEndOffset = Offset(\r\n-      centerX - outerRadius * .8 * cos(datetime.hour * 8 * pi / 180),\r\n-      centerY - outerRadius * .8 * sin(datetime.hour * 10 * pi / 180),\r\n+      centerX - outerRadius * .6 * cos(datetime.hour * 8 * pi / 180),\r\n+      centerY - outerRadius * .6 * sin(datetime.hour * 10 * pi / 180),\r\n     );\r\n     Offset hourStartOffset = Offset(\r\n       centerX + 15 * cos(datetime.hour * 8 * pi / 180),\r\n       centerY + 15 * sin(datetime.hour * 10 * pi / 180),\r\n"
+                },
+                {
+                    "date": 1643088470321,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -73,10 +73,10 @@\n       ..strokeWidth = 4\r\n       ..strokeCap = StrokeCap.round;\r\n \r\n     Offset minEndOffset = Offset(\r\n-      centerX - outerRadius * .6 * cos(datetime.minute * 6 * pi / 180),\r\n-      centerY - outerRadius * .6 * sin(datetime.minute * 6 * pi / 180),\r\n+      centerX - outerRadius * .8 * cos(datetime.minute * 6 * pi / 180),\r\n+      centerY - outerRadius * .8 * sin(datetime.minute * 6 * pi / 180),\r\n     );\r\n     Offset minStartOffset = Offset(\r\n       centerX + 15 * cos(datetime.minute * 6 * pi / 180),\r\n       centerY + 15 * sin(datetime.minute * 6 * pi / 180),\r\n"
+                },
+                {
+                    "date": 1643088477517,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -73,10 +73,10 @@\n       ..strokeWidth = 4\r\n       ..strokeCap = StrokeCap.round;\r\n \r\n     Offset minEndOffset = Offset(\r\n-      centerX - outerRadius * .8 * cos(datetime.minute * 6 * pi / 180),\r\n-      centerY - outerRadius * .8 * sin(datetime.minute * 6 * pi / 180),\r\n+      centerX - outerRadius * .7 * cos(datetime.minute * 6 * pi / 180),\r\n+      centerY - outerRadius * .7 * sin(datetime.minute * 6 * pi / 180),\r\n     );\r\n     Offset minStartOffset = Offset(\r\n       centerX + 15 * cos(datetime.minute * 6 * pi / 180),\r\n       centerY + 15 * sin(datetime.minute * 6 * pi / 180),\r\n"
+                },
+                {
+                    "date": 1643088492507,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -94,10 +94,10 @@\n       centerX - outerRadius * .6 * cos(datetime.hour * 8 * pi / 180),\r\n       centerY - outerRadius * .6 * sin(datetime.hour * 10 * pi / 180),\r\n     );\r\n     Offset hourStartOffset = Offset(\r\n-      centerX + 15 * cos(datetime.hour * 8 * pi / 180),\r\n-      centerY + 15 * sin(datetime.hour * 10 * pi / 180),\r\n+      centerX + 15 * cos(datetime.hour * 6 * pi / 180),\r\n+      centerY + 15 * sin(datetime.hour * 6 * pi / 180),\r\n     );\r\n     canvas.drawLine(hourStartOffset, hourEndOffset, hourLinePaint);\r\n \r\n     Paint centerCirclePaint = Paint()..color = Color(0xFFE81466);\r\n"
+                },
+                {
+                    "date": 1643088501406,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -94,10 +94,10 @@\n       centerX - outerRadius * .6 * cos(datetime.hour * 8 * pi / 180),\r\n       centerY - outerRadius * .6 * sin(datetime.hour * 10 * pi / 180),\r\n     );\r\n     Offset hourStartOffset = Offset(\r\n-      centerX + 15 * cos(datetime.hour * 6 * pi / 180),\r\n-      centerY + 15 * sin(datetime.hour * 6 * pi / 180),\r\n+      centerX + 15 * cos(datetime.hour * 8 * pi / 180),\r\n+      centerY + 15 * sin(datetime.hour * 10 * pi / 180),\r\n     );\r\n     canvas.drawLine(hourStartOffset, hourEndOffset, hourLinePaint);\r\n \r\n     Paint centerCirclePaint = Paint()..color = Color(0xFFE81466);\r\n"
+                },
+                {
+                    "date": 1643088510580,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -94,10 +94,10 @@\n       centerX - outerRadius * .6 * cos(datetime.hour * 8 * pi / 180),\r\n       centerY - outerRadius * .6 * sin(datetime.hour * 10 * pi / 180),\r\n     );\r\n     Offset hourStartOffset = Offset(\r\n-      centerX + 15 * cos(datetime.hour * 8 * pi / 180),\r\n-      centerY + 15 * sin(datetime.hour * 10 * pi / 180),\r\n+      centerX + 15 * cos(datetime.hour * pi / 180),\r\n+      centerY + 15 * sin(datetime.hour * pi / 180),\r\n     );\r\n     canvas.drawLine(hourStartOffset, hourEndOffset, hourLinePaint);\r\n \r\n     Paint centerCirclePaint = Paint()..color = Color(0xFFE81466);\r\n"
+                },
+                {
+                    "date": 1643088523675,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -94,10 +94,10 @@\n       centerX - outerRadius * .6 * cos(datetime.hour * 8 * pi / 180),\r\n       centerY - outerRadius * .6 * sin(datetime.hour * 10 * pi / 180),\r\n     );\r\n     Offset hourStartOffset = Offset(\r\n-      centerX + 15 * cos(datetime.hour * pi / 180),\r\n-      centerY + 15 * sin(datetime.hour * pi / 180),\r\n+      centerX + 15 * cos(datetime.hour),\r\n+      centerY + 15 * sin(datetime.hour),\r\n     );\r\n     canvas.drawLine(hourStartOffset, hourEndOffset, hourLinePaint);\r\n \r\n     Paint centerCirclePaint = Paint()..color = Color(0xFFE81466);\r\n"
+                },
+                {
+                    "date": 1643088531140,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -94,10 +94,10 @@\n       centerX - outerRadius * .6 * cos(datetime.hour * 8 * pi / 180),\r\n       centerY - outerRadius * .6 * sin(datetime.hour * 10 * pi / 180),\r\n     );\r\n     Offset hourStartOffset = Offset(\r\n-      centerX + 15 * cos(datetime.hour),\r\n-      centerY + 15 * sin(datetime.hour),\r\n+      centerX + 15 * cos(datetime.hour * 8 * pi / 180),\r\n+      centerY + 15 * sin(datetime.hour * 10 * pi / 180),\r\n     );\r\n     canvas.drawLine(hourStartOffset, hourEndOffset, hourLinePaint);\r\n \r\n     Paint centerCirclePaint = Paint()..color = Color(0xFFE81466);\r\n"
+                },
+                {
+                    "date": 1643088573528,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,8 @@\n   void paint(Canvas canvas, Size size) {\r\n     const double BASE_SIZE = 320.0;\r\n     bool showAllNumbers = true;\r\n     double scaleFactor = size.shortestSide / BASE_SIZE;\r\n-    bool showTicks = true;\r\n     double centerX = size.width / 2;\r\n     double centerY = size.height / 2;\r\n     double radius = min(centerX, centerY);\r\n     Offset center = Offset(centerX, centerY);\r\n"
+                },
+                {
+                    "date": 1643088606653,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -93,10 +93,10 @@\n       centerX - outerRadius * .6 * cos(datetime.hour * 8 * pi / 180),\r\n       centerY - outerRadius * .6 * sin(datetime.hour * 10 * pi / 180),\r\n     );\r\n     Offset hourStartOffset = Offset(\r\n-      centerX + 15 * cos(datetime.hour * 8 * pi / 180),\r\n-      centerY + 15 * sin(datetime.hour * 10 * pi / 180),\r\n+      centerX * cos(datetime.hour * 8 * pi / 180),\r\n+      centerY * sin(datetime.hour * 10 * pi / 180),\r\n     );\r\n     canvas.drawLine(hourStartOffset, hourEndOffset, hourLinePaint);\r\n \r\n     Paint centerCirclePaint = Paint()..color = Color(0xFFE81466);\r\n"
+                },
+                {
+                    "date": 1643088629114,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -89,14 +89,14 @@\n       ..strokeWidth = 6\r\n       ..strokeCap = StrokeCap.round;\r\n \r\n     Offset hourEndOffset = Offset(\r\n-      centerX - outerRadius * .6 * cos(datetime.hour * 8 * pi / 180),\r\n-      centerY - outerRadius * .6 * sin(datetime.hour * 10 * pi / 180),\r\n+      centerX - outerRadius * .6 * cos(datetime.hour * 8 * pi / 90),\r\n+      centerY - outerRadius * .6 * sin(datetime.hour * 10 * pi / 90),\r\n     );\r\n     Offset hourStartOffset = Offset(\r\n-      centerX * cos(datetime.hour * 8 * pi / 180),\r\n-      centerY * sin(datetime.hour * 10 * pi / 180),\r\n+      centerX + 15 * cos(datetime.hour * 8 * pi / 180),\r\n+      centerY + 15 * sin(datetime.hour * 10 * pi / 180),\r\n     );\r\n     canvas.drawLine(hourStartOffset, hourEndOffset, hourLinePaint);\r\n \r\n     Paint centerCirclePaint = Paint()..color = Color(0xFFE81466);\r\n"
+                },
+                {
+                    "date": 1643088639738,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -89,10 +89,10 @@\n       ..strokeWidth = 6\r\n       ..strokeCap = StrokeCap.round;\r\n \r\n     Offset hourEndOffset = Offset(\r\n-      centerX - outerRadius * .6 * cos(datetime.hour * 8 * pi / 90),\r\n-      centerY - outerRadius * .6 * sin(datetime.hour * 10 * pi / 90),\r\n+      centerX - outerRadius * .6 * cos(datetime.hour * 8 * pi / 100),\r\n+      centerY - outerRadius * .6 * sin(datetime.hour * 10 * pi / 100),\r\n     );\r\n     Offset hourStartOffset = Offset(\r\n       centerX + 15 * cos(datetime.hour * 8 * pi / 180),\r\n       centerY + 15 * sin(datetime.hour * 10 * pi / 180),\r\n"
+                },
+                {
+                    "date": 1643088651701,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -89,10 +89,10 @@\n       ..strokeWidth = 6\r\n       ..strokeCap = StrokeCap.round;\r\n \r\n     Offset hourEndOffset = Offset(\r\n-      centerX - outerRadius * .6 * cos(datetime.hour * 8 * pi / 100),\r\n-      centerY - outerRadius * .6 * sin(datetime.hour * 10 * pi / 100),\r\n+      centerX - outerRadius * .6 * cos(datetime.hour * 8 * pi / 120),\r\n+      centerY - outerRadius * .6 * sin(datetime.hour * 10 * pi / 120),\r\n     );\r\n     Offset hourStartOffset = Offset(\r\n       centerX + 15 * cos(datetime.hour * 8 * pi / 180),\r\n       centerY + 15 * sin(datetime.hour * 10 * pi / 180),\r\n"
+                },
+                {
+                    "date": 1643088659168,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -90,9 +90,9 @@\n       ..strokeCap = StrokeCap.round;\r\n \r\n     Offset hourEndOffset = Offset(\r\n       centerX - outerRadius * .6 * cos(datetime.hour * 8 * pi / 120),\r\n-      centerY - outerRadius * .6 * sin(datetime.hour * 10 * pi / 120),\r\n+      centerY - outerRadius * .6 * sin(datetime.hour * 10 * pi / 200),\r\n     );\r\n     Offset hourStartOffset = Offset(\r\n       centerX + 15 * cos(datetime.hour * 8 * pi / 180),\r\n       centerY + 15 * sin(datetime.hour * 10 * pi / 180),\r\n"
+                },
+                {
+                    "date": 1643088665858,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -90,9 +90,9 @@\n       ..strokeCap = StrokeCap.round;\r\n \r\n     Offset hourEndOffset = Offset(\r\n       centerX - outerRadius * .6 * cos(datetime.hour * 8 * pi / 120),\r\n-      centerY - outerRadius * .6 * sin(datetime.hour * 10 * pi / 200),\r\n+      centerY - outerRadius * .6 * sin(datetime.hour * 10 * pi / 300),\r\n     );\r\n     Offset hourStartOffset = Offset(\r\n       centerX + 15 * cos(datetime.hour * 8 * pi / 180),\r\n       centerY + 15 * sin(datetime.hour * 10 * pi / 180),\r\n"
+                },
+                {
+                    "date": 1643088672772,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -89,10 +89,10 @@\n       ..strokeWidth = 6\r\n       ..strokeCap = StrokeCap.round;\r\n \r\n     Offset hourEndOffset = Offset(\r\n-      centerX - outerRadius * .6 * cos(datetime.hour * 8 * pi / 120),\r\n-      centerY - outerRadius * .6 * sin(datetime.hour * 10 * pi / 300),\r\n+      centerX - outerRadius * .6 * cos(datetime.hour * 8 * pi / 180),\r\n+      centerY - outerRadius * .6 * sin(datetime.hour * 10 * pi / 180),\r\n     );\r\n     Offset hourStartOffset = Offset(\r\n       centerX + 15 * cos(datetime.hour * 8 * pi / 180),\r\n       centerY + 15 * sin(datetime.hour * 10 * pi / 180),\r\n"
+                },
+                {
+                    "date": 1643088822115,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -89,9 +89,9 @@\n       ..strokeWidth = 6\r\n       ..strokeCap = StrokeCap.round;\r\n \r\n     Offset hourEndOffset = Offset(\r\n-      centerX - outerRadius * .6 * cos(datetime.hour * 8 * pi / 180),\r\n+      centerX - innerRdaius * .6 * cos(datetime.hour * 8 * pi / 180),\r\n       centerY - outerRadius * .6 * sin(datetime.hour * 10 * pi / 180),\r\n     );\r\n     Offset hourStartOffset = Offset(\r\n       centerX + 15 * cos(datetime.hour * 8 * pi / 180),\r\n"
+                },
+                {
+                    "date": 1643088831548,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -90,9 +90,9 @@\n       ..strokeCap = StrokeCap.round;\r\n \r\n     Offset hourEndOffset = Offset(\r\n       centerX - innerRdaius * .6 * cos(datetime.hour * 8 * pi / 180),\r\n-      centerY - outerRadius * .6 * sin(datetime.hour * 10 * pi / 180),\r\n+      centerY - innerRdaius * .6 * sin(datetime.hour * 10 * pi / 180),\r\n     );\r\n     Offset hourStartOffset = Offset(\r\n       centerX + 15 * cos(datetime.hour * 8 * pi / 180),\r\n       centerY + 15 * sin(datetime.hour * 10 * pi / 180),\r\n"
+                },
+                {
+                    "date": 1643088837057,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -89,10 +89,10 @@\n       ..strokeWidth = 6\r\n       ..strokeCap = StrokeCap.round;\r\n \r\n     Offset hourEndOffset = Offset(\r\n-      centerX - innerRdaius * .6 * cos(datetime.hour * 8 * pi / 180),\r\n-      centerY - innerRdaius * .6 * sin(datetime.hour * 10 * pi / 180),\r\n+      centerX - outerRadius * .6 * cos(datetime.hour * 8 * pi / 180),\r\n+      centerY - outerRadius * .6 * sin(datetime.hour * 10 * pi / 180),\r\n     );\r\n     Offset hourStartOffset = Offset(\r\n       centerX + 15 * cos(datetime.hour * 8 * pi / 180),\r\n       centerY + 15 * sin(datetime.hour * 10 * pi / 180),\r\n"
+                },
+                {
+                    "date": 1643100788067,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -123,9 +123,9 @@\n   double longHandLength = r - (p * scaleFactor);\r\n \r\n   for (var h = 1; h <= 12; h++) {\r\n     if (!showAllNumbers && h % 3 != 0) continue;\r\n-    double angle = (h * pi / 6) - pi; //+ pi / 2;\r\n+    double angle = (h * pi / 6) - pi / 2; //+ pi / 2;\r\n     Offset offset =\r\n         Offset(longHandLength * cos(angle), longHandLength * sin(angle));\r\n     TextSpan span = TextSpan(style: style, text: h.toString());\r\n     TextPainter tp = TextPainter(\r\n"
+                },
+                {
+                    "date": 1643100795395,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -123,9 +123,9 @@\n   double longHandLength = r - (p * scaleFactor);\r\n \r\n   for (var h = 1; h <= 12; h++) {\r\n     if (!showAllNumbers && h % 3 != 0) continue;\r\n-    double angle = (h * pi / 6) - pi / 2; //+ pi / 2;\r\n+    double angle = (h * pi / 6) - pi; //+ pi / 2;\r\n     Offset offset =\r\n         Offset(longHandLength * cos(angle), longHandLength * sin(angle));\r\n     TextSpan span = TextSpan(style: style, text: h.toString());\r\n     TextPainter tp = TextPainter(\r\n"
+                },
+                {
+                    "date": 1643100824490,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -129,9 +129,9 @@\n         Offset(longHandLength * cos(angle), longHandLength * sin(angle));\r\n     TextSpan span = TextSpan(style: style, text: h.toString());\r\n     TextPainter tp = TextPainter(\r\n       text: span,\r\n-      textAlign: TextAlign.center,\r\n+      textAlign: TextAlign.left,\r\n       textDirection: TextDirection.ltr,\r\n     );\r\n     tp.layout();\r\n     tp.paint(canvas, size.center(offset - tp.size.center(Offset.zero)));\r\n"
+                },
+                {
+                    "date": 1643100830444,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -129,9 +129,9 @@\n         Offset(longHandLength * cos(angle), longHandLength * sin(angle));\r\n     TextSpan span = TextSpan(style: style, text: h.toString());\r\n     TextPainter tp = TextPainter(\r\n       text: span,\r\n-      textAlign: TextAlign.left,\r\n+      textAlign: TextAlign.center,\r\n       textDirection: TextDirection.ltr,\r\n     );\r\n     tp.layout();\r\n     tp.paint(canvas, size.center(offset - tp.size.center(Offset.zero)));\r\n"
+                },
+                {
+                    "date": 1643100852786,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -121,10 +121,10 @@\n \r\n   double r = size.shortestSide / 2;\r\n   double longHandLength = r - (p * scaleFactor);\r\n \r\n-  for (var h = 1; h <= 12; h++) {\r\n-    if (!showAllNumbers && h % 3 != 0) continue;\r\n+  for (var h = 1; h <= 60; h++) {\r\n+    if (!showAllNumbers) continue;\r\n     double angle = (h * pi / 6) - pi; //+ pi / 2;\r\n     Offset offset =\r\n         Offset(longHandLength * cos(angle), longHandLength * sin(angle));\r\n     TextSpan span = TextSpan(style: style, text: h.toString());\r\n"
+                },
+                {
+                    "date": 1643100874475,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -121,10 +121,10 @@\n \r\n   double r = size.shortestSide / 2;\r\n   double longHandLength = r - (p * scaleFactor);\r\n \r\n-  for (var h = 1; h <= 60; h++) {\r\n-    if (!showAllNumbers) continue;\r\n+  for (var h = 1; h <= 12; h++) {\r\n+    if (!showAllNumbers && h % 3 != 0) continue;\r\n     double angle = (h * pi / 6) - pi; //+ pi / 2;\r\n     Offset offset =\r\n         Offset(longHandLength * cos(angle), longHandLength * sin(angle));\r\n     TextSpan span = TextSpan(style: style, text: h.toString());\r\n"
+                },
+                {
+                    "date": 1643100884501,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -121,9 +121,9 @@\n \r\n   double r = size.shortestSide / 2;\r\n   double longHandLength = r - (p * scaleFactor);\r\n \r\n-  for (var h = 1; h <= 12; h++) {\r\n+  for (var h = 1; h <= 13; h++) {\r\n     if (!showAllNumbers && h % 3 != 0) continue;\r\n     double angle = (h * pi / 6) - pi; //+ pi / 2;\r\n     Offset offset =\r\n         Offset(longHandLength * cos(angle), longHandLength * sin(angle));\r\n"
+                },
+                {
+                    "date": 1643100890070,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -122,9 +122,9 @@\n   double r = size.shortestSide / 2;\r\n   double longHandLength = r - (p * scaleFactor);\r\n \r\n   for (var h = 1; h <= 13; h++) {\r\n-    if (!showAllNumbers && h % 3 != 0) continue;\r\n+    if (!showAllNumbers && h % 2 != 0) continue;\r\n     double angle = (h * pi / 6) - pi; //+ pi / 2;\r\n     Offset offset =\r\n         Offset(longHandLength * cos(angle), longHandLength * sin(angle));\r\n     TextSpan span = TextSpan(style: style, text: h.toString());\r\n"
+                },
+                {
+                    "date": 1643100897842,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -122,9 +122,9 @@\n   double r = size.shortestSide / 2;\r\n   double longHandLength = r - (p * scaleFactor);\r\n \r\n   for (var h = 1; h <= 13; h++) {\r\n-    if (!showAllNumbers && h % 2 != 0) continue;\r\n+    if (!showAllNumbers && h % 1 != 0) continue;\r\n     double angle = (h * pi / 6) - pi; //+ pi / 2;\r\n     Offset offset =\r\n         Offset(longHandLength * cos(angle), longHandLength * sin(angle));\r\n     TextSpan span = TextSpan(style: style, text: h.toString());\r\n"
+                },
+                {
+                    "date": 1643100909911,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -121,10 +121,10 @@\n \r\n   double r = size.shortestSide / 2;\r\n   double longHandLength = r - (p * scaleFactor);\r\n \r\n-  for (var h = 1; h <= 13; h++) {\r\n-    if (!showAllNumbers && h % 1 != 0) continue;\r\n+  for (var h = 1; h <= 12; h++) {\r\n+    if (!showAllNumbers && h % 3 != 0) continue;\r\n     double angle = (h * pi / 6) - pi; //+ pi / 2;\r\n     Offset offset =\r\n         Offset(longHandLength * cos(angle), longHandLength * sin(angle));\r\n     TextSpan span = TextSpan(style: style, text: h.toString());\r\n"
+                },
+                {
+                    "date": 1643100916446,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -122,9 +122,9 @@\n   double r = size.shortestSide / 2;\r\n   double longHandLength = r - (p * scaleFactor);\r\n \r\n   for (var h = 1; h <= 12; h++) {\r\n-    if (!showAllNumbers && h % 3 != 0) continue;\r\n+    if (!showAllNumbers) continue;\r\n     double angle = (h * pi / 6) - pi; //+ pi / 2;\r\n     Offset offset =\r\n         Offset(longHandLength * cos(angle), longHandLength * sin(angle));\r\n     TextSpan span = TextSpan(style: style, text: h.toString());\r\n"
+                },
+                {
+                    "date": 1643100938123,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -122,9 +122,9 @@\n   double r = size.shortestSide / 2;\r\n   double longHandLength = r - (p * scaleFactor);\r\n \r\n   for (var h = 1; h <= 12; h++) {\r\n-    if (!showAllNumbers) continue;\r\n+    if (!showAllNumbers && h % 3 != 0) continue;\r\n     double angle = (h * pi / 6) - pi; //+ pi / 2;\r\n     Offset offset =\r\n         Offset(longHandLength * cos(angle), longHandLength * sin(angle));\r\n     TextSpan span = TextSpan(style: style, text: h.toString());\r\n"
+                },
+                {
+                    "date": 1643100969981,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -114,9 +114,9 @@\n     Canvas canvas, Size size, double scaleFactor, bool showAllNumbers) {\r\n   TextStyle style = TextStyle(\r\n       color: Colors.black,\r\n       fontWeight: FontWeight.bold,\r\n-      fontSize: 16.0 * scaleFactor * 1.0);\r\n+      fontSize: 16.0 * scaleFactor * 2.0);\r\n   double p = 10.0;\r\n   // p += 24.0;\r\n \r\n   double r = size.shortestSide / 2;\r\n"
+                },
+                {
+                    "date": 1643100980387,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -114,10 +114,10 @@\n     Canvas canvas, Size size, double scaleFactor, bool showAllNumbers) {\r\n   TextStyle style = TextStyle(\r\n       color: Colors.black,\r\n       fontWeight: FontWeight.bold,\r\n-      fontSize: 16.0 * scaleFactor * 2.0);\r\n-  double p = 10.0;\r\n+      fontSize: 16.0 * scaleFactor * 1.0);\r\n+  double p = 12.0;\r\n   // p += 24.0;\r\n \r\n   double r = size.shortestSide / 2;\r\n   double longHandLength = r - (p * scaleFactor);\r\n"
+                },
+                {
+                    "date": 1643100985900,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -115,9 +115,9 @@\n   TextStyle style = TextStyle(\r\n       color: Colors.black,\r\n       fontWeight: FontWeight.bold,\r\n       fontSize: 16.0 * scaleFactor * 1.0);\r\n-  double p = 12.0;\r\n+  double p = 10.0;\r\n   // p += 24.0;\r\n \r\n   double r = size.shortestSide / 2;\r\n   double longHandLength = r - (p * scaleFactor);\r\n"
+                },
+                {
+                    "date": 1643101291801,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -130,9 +130,9 @@\n     TextSpan span = TextSpan(style: style, text: h.toString());\r\n     TextPainter tp = TextPainter(\r\n       text: span,\r\n       textAlign: TextAlign.center,\r\n-      textDirection: TextDirection.ltr,\r\n+      textDirection: TextDirection.rtl,\r\n     );\r\n     tp.layout();\r\n     tp.paint(canvas, size.center(offset - tp.size.center(Offset.zero)));\r\n   }\r\n"
+                },
+                {
+                    "date": 1643101297244,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -130,9 +130,8 @@\n     TextSpan span = TextSpan(style: style, text: h.toString());\r\n     TextPainter tp = TextPainter(\r\n       text: span,\r\n       textAlign: TextAlign.center,\r\n-      textDirection: TextDirection.rtl,\r\n     );\r\n     tp.layout();\r\n     tp.paint(canvas, size.center(offset - tp.size.center(Offset.zero)));\r\n   }\r\n"
+                },
+                {
+                    "date": 1643102064806,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -130,9 +130,13 @@\n     TextSpan span = TextSpan(style: style, text: h.toString());\r\n     TextPainter tp = TextPainter(\r\n       text: span,\r\n       textAlign: TextAlign.center,\r\n+      textDirection: TextDirection.rtl,\r\n     );\r\n     tp.layout();\r\n+    final degrees = 15;\r\n+    final radians = degrees * 3.141566 / 180;\r\n+    canvas.rotate(radians);\r\n     tp.paint(canvas, size.center(offset - tp.size.center(Offset.zero)));\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1643102077125,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -134,9 +134,9 @@\n       textDirection: TextDirection.rtl,\r\n     );\r\n     tp.layout();\r\n     final degrees = 15;\r\n-    final radians = degrees * 3.141566 / 180;\r\n+    final radians = degrees * 3.141566;\r\n     canvas.rotate(radians);\r\n     tp.paint(canvas, size.center(offset - tp.size.center(Offset.zero)));\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1643102114592,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -133,10 +133,10 @@\n       textAlign: TextAlign.center,\r\n       textDirection: TextDirection.rtl,\r\n     );\r\n     tp.layout();\r\n-    final degrees = 15;\r\n-    final radians = degrees * 3.141566;\r\n-    canvas.rotate(radians);\r\n+    // final degrees = 15;\r\n+    // final radians = degrees * 3.141566 / 180;\r\n+    canvas.rotate(180.00);\r\n     tp.paint(canvas, size.center(offset - tp.size.center(Offset.zero)));\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1643102122812,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -135,8 +135,8 @@\n     );\r\n     tp.layout();\r\n     // final degrees = 15;\r\n     // final radians = degrees * 3.141566 / 180;\r\n-    canvas.rotate(180.00);\r\n+    canvas.rotate(60.00);\r\n     tp.paint(canvas, size.center(offset - tp.size.center(Offset.zero)));\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1643102130634,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -133,10 +133,8 @@\n       textAlign: TextAlign.center,\r\n       textDirection: TextDirection.rtl,\r\n     );\r\n     tp.layout();\r\n-    // final degrees = 15;\r\n-    // final radians = degrees * 3.141566 / 180;\r\n-    canvas.rotate(60.00);\r\n+\r\n     tp.paint(canvas, size.center(offset - tp.size.center(Offset.zero)));\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1643102202320,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -111,8 +111,11 @@\n }\r\n \r\n void _drawIndicators(\r\n     Canvas canvas, Size size, double scaleFactor, bool showAllNumbers) {\r\n+  final degrees = 15;\r\n+  final radians = degrees * 3.141566 / 180;\r\n+  canvas.rotate(radians);\r\n   TextStyle style = TextStyle(\r\n       color: Colors.black,\r\n       fontWeight: FontWeight.bold,\r\n       fontSize: 16.0 * scaleFactor * 1.0);\r\n@@ -132,8 +135,9 @@\n       text: span,\r\n       textAlign: TextAlign.center,\r\n       textDirection: TextDirection.rtl,\r\n     );\r\n+    canvas.restore();\r\n     tp.layout();\r\n \r\n     tp.paint(canvas, size.center(offset - tp.size.center(Offset.zero)));\r\n   }\r\n"
+                },
+                {
+                    "date": 1643102234208,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -111,11 +111,11 @@\n }\r\n \r\n void _drawIndicators(\r\n     Canvas canvas, Size size, double scaleFactor, bool showAllNumbers) {\r\n-  final degrees = 15;\r\n-  final radians = degrees * 3.141566 / 180;\r\n-  canvas.rotate(radians);\r\n+  // final degrees = 15;\r\n+  // final radians = degrees * 3.141566 / 180;\r\n+  canvas.rotate(45.00);\r\n   TextStyle style = TextStyle(\r\n       color: Colors.black,\r\n       fontWeight: FontWeight.bold,\r\n       fontSize: 16.0 * scaleFactor * 1.0);\r\n"
+                },
+                {
+                    "date": 1643102243356,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -113,9 +113,9 @@\n void _drawIndicators(\r\n     Canvas canvas, Size size, double scaleFactor, bool showAllNumbers) {\r\n   // final degrees = 15;\r\n   // final radians = degrees * 3.141566 / 180;\r\n-  canvas.rotate(45.00);\r\n+  canvas.rotate(120.00);\r\n   TextStyle style = TextStyle(\r\n       color: Colors.black,\r\n       fontWeight: FontWeight.bold,\r\n       fontSize: 16.0 * scaleFactor * 1.0);\r\n"
+                },
+                {
+                    "date": 1643102251144,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -111,11 +111,11 @@\n }\r\n \r\n void _drawIndicators(\r\n     Canvas canvas, Size size, double scaleFactor, bool showAllNumbers) {\r\n-  // final degrees = 15;\r\n-  // final radians = degrees * 3.141566 / 180;\r\n-  canvas.rotate(120.00);\r\n+  final degrees = 10;\r\n+  final radians = degrees * 3.141566 / 180;\r\n+  canvas.rotate(radians);\r\n   TextStyle style = TextStyle(\r\n       color: Colors.black,\r\n       fontWeight: FontWeight.bold,\r\n       fontSize: 16.0 * scaleFactor * 1.0);\r\n"
+                },
+                {
+                    "date": 1643102260148,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -111,11 +111,11 @@\n }\r\n \r\n void _drawIndicators(\r\n     Canvas canvas, Size size, double scaleFactor, bool showAllNumbers) {\r\n-  final degrees = 10;\r\n-  final radians = degrees * 3.141566 / 180;\r\n-  canvas.rotate(radians);\r\n+  // final degrees = 10;\r\n+  // final radians = degrees * 3.141566 / 180;\r\n+  // canvas.rotate(radians);\r\n   TextStyle style = TextStyle(\r\n       color: Colors.black,\r\n       fontWeight: FontWeight.bold,\r\n       fontSize: 16.0 * scaleFactor * 1.0);\r\n"
+                },
+                {
+                    "date": 1643102281584,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -135,9 +135,9 @@\n       text: span,\r\n       textAlign: TextAlign.center,\r\n       textDirection: TextDirection.rtl,\r\n     );\r\n-    canvas.restore();\r\n+    // canvas.restore();\r\n     tp.layout();\r\n \r\n     tp.paint(canvas, size.center(offset - tp.size.center(Offset.zero)));\r\n   }\r\n"
+                },
+                {
+                    "date": 1643102510898,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -135,9 +135,9 @@\n       text: span,\r\n       textAlign: TextAlign.center,\r\n       textDirection: TextDirection.rtl,\r\n     );\r\n-    // canvas.restore();\r\n+    canvas.translate(-100, -100)\r\n     tp.layout();\r\n \r\n     tp.paint(canvas, size.center(offset - tp.size.center(Offset.zero)));\r\n   }\r\n"
+                },
+                {
+                    "date": 1643102516217,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -135,9 +135,9 @@\n       text: span,\r\n       textAlign: TextAlign.center,\r\n       textDirection: TextDirection.rtl,\r\n     );\r\n-    canvas.translate(-100, -100)\r\n+    canvas.translate(-100, -100);\r\n     tp.layout();\r\n \r\n     tp.paint(canvas, size.center(offset - tp.size.center(Offset.zero)));\r\n   }\r\n"
+                },
+                {
+                    "date": 1643102525282,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -135,9 +135,9 @@\n       text: span,\r\n       textAlign: TextAlign.center,\r\n       textDirection: TextDirection.rtl,\r\n     );\r\n-    canvas.translate(-100, -100);\r\n+    canvas.translate(-10, -10);\r\n     tp.layout();\r\n \r\n     tp.paint(canvas, size.center(offset - tp.size.center(Offset.zero)));\r\n   }\r\n"
+                },
+                {
+                    "date": 1643102532843,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -135,9 +135,9 @@\n       text: span,\r\n       textAlign: TextAlign.center,\r\n       textDirection: TextDirection.rtl,\r\n     );\r\n-    canvas.translate(-10, -10);\r\n+    canvas.translate(-10, -0);\r\n     tp.layout();\r\n \r\n     tp.paint(canvas, size.center(offset - tp.size.center(Offset.zero)));\r\n   }\r\n"
+                },
+                {
+                    "date": 1643102543057,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -135,9 +135,9 @@\n       text: span,\r\n       textAlign: TextAlign.center,\r\n       textDirection: TextDirection.rtl,\r\n     );\r\n-    canvas.translate(-10, -0);\r\n+    // canvas.translate(-10, -0);\r\n     tp.layout();\r\n \r\n     tp.paint(canvas, size.center(offset - tp.size.center(Offset.zero)));\r\n   }\r\n"
+                },
+                {
+                    "date": 1643102624078,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -119,9 +119,9 @@\n       color: Colors.black,\r\n       fontWeight: FontWeight.bold,\r\n       fontSize: 16.0 * scaleFactor * 1.0);\r\n   double p = 10.0;\r\n-  // p += 24.0;\r\n+  p += 24.0;\r\n \r\n   double r = size.shortestSide / 2;\r\n   double longHandLength = r - (p * scaleFactor);\r\n \r\n"
+                },
+                {
+                    "date": 1643103610949,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -111,17 +111,14 @@\n }\r\n \r\n void _drawIndicators(\r\n     Canvas canvas, Size size, double scaleFactor, bool showAllNumbers) {\r\n-  // final degrees = 10;\r\n-  // final radians = degrees * 3.141566 / 180;\r\n-  // canvas.rotate(radians);\r\n   TextStyle style = TextStyle(\r\n       color: Colors.black,\r\n       fontWeight: FontWeight.bold,\r\n       fontSize: 16.0 * scaleFactor * 1.0);\r\n   double p = 10.0;\r\n-  p += 24.0;\r\n+  // p += 24.0;\r\n \r\n   double r = size.shortestSide / 2;\r\n   double longHandLength = r - (p * scaleFactor);\r\n \r\n@@ -135,9 +132,8 @@\n       text: span,\r\n       textAlign: TextAlign.center,\r\n       textDirection: TextDirection.rtl,\r\n     );\r\n-    // canvas.translate(-10, -0);\r\n     tp.layout();\r\n \r\n     tp.paint(canvas, size.center(offset - tp.size.center(Offset.zero)));\r\n   }\r\n"
+                },
+                {
+                    "date": 1643103722618,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -132,9 +132,9 @@\n       text: span,\r\n       textAlign: TextAlign.center,\r\n       textDirection: TextDirection.rtl,\r\n     );\r\n-    tp.layout();\r\n+    // tp.layout();\r\n \r\n     tp.paint(canvas, size.center(offset - tp.size.center(Offset.zero)));\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1643103785614,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -132,9 +132,10 @@\n       text: span,\r\n       textAlign: TextAlign.center,\r\n       textDirection: TextDirection.rtl,\r\n     );\r\n-    // tp.layout();\r\n \r\n+    tp.layout();\r\n+\r\n     tp.paint(canvas, size.center(offset - tp.size.center(Offset.zero)));\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1643107933668,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n     Offset center = Offset(centerX, centerY);\r\n     double outerRadius = radius - 20;\r\n     double innerRdaius = radius - 30;\r\n     DateTime datetime = DateTime.now();\r\n-    _drawIndicators(canvas, size, scaleFactor, showAllNumbers);\r\n+    // _drawIndicators(canvas, size, scaleFactor, showAllNumbers);\r\n \r\n     //dashLine for second\r\n     Paint secDashPaint = Paint()\r\n       ..color = Colors.white\r\n"
+                },
+                {
+                    "date": 1643108006106,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,57 +49,8 @@\n \r\n       canvas.drawLine(Offset(x1, y1), Offset(x2, y2), hourDashPaint);\r\n     }\r\n \r\n-    //second hand\r\n-    Paint secLinePaint = Paint()\r\n-      ..color = Color(0xFFE81466)\r\n-      ..strokeWidth = 3\r\n-      ..strokeCap = StrokeCap.round;\r\n-\r\n-    Offset secEndOffset = Offset(\r\n-      centerX + 15 * cos(datetime.second * 6 * pi / 180),\r\n-      centerY + 15 * sin(datetime.second * 6 * pi / 180),\r\n-    );\r\n-    Offset secStartOffset = Offset(\r\n-      centerX - outerRadius * cos(datetime.second * 6 * pi / 180),\r\n-      centerY - outerRadius * sin(datetime.second * 6 * pi / 180),\r\n-    );\r\n-    canvas.drawLine(secStartOffset, secEndOffset, secLinePaint);\r\n-\r\n-//minute hand\r\n-    Paint minLinePaint = Paint()\r\n-      ..color = Color(0xFFBEC5D5)\r\n-      ..strokeWidth = 4\r\n-      ..strokeCap = StrokeCap.round;\r\n-\r\n-    Offset minEndOffset = Offset(\r\n-      centerX - outerRadius * .7 * cos(datetime.minute * 6 * pi / 180),\r\n-      centerY - outerRadius * .7 * sin(datetime.minute * 6 * pi / 180),\r\n-    );\r\n-    Offset minStartOffset = Offset(\r\n-      centerX + 15 * cos(datetime.minute * 6 * pi / 180),\r\n-      centerY + 15 * sin(datetime.minute * 6 * pi / 180),\r\n-    );\r\n-    canvas.drawLine(minStartOffset, minEndOffset, minLinePaint);\r\n-\r\n-//hour hand\r\n-\r\n-    Paint hourLinePaint = Paint()\r\n-      ..color = Color(0xFF222E63)\r\n-      ..strokeWidth = 6\r\n-      ..strokeCap = StrokeCap.round;\r\n-\r\n-    Offset hourEndOffset = Offset(\r\n-      centerX - outerRadius * .6 * cos(datetime.hour * 8 * pi / 180),\r\n-      centerY - outerRadius * .6 * sin(datetime.hour * 10 * pi / 180),\r\n-    );\r\n-    Offset hourStartOffset = Offset(\r\n-      centerX + 15 * cos(datetime.hour * 8 * pi / 180),\r\n-      centerY + 15 * sin(datetime.hour * 10 * pi / 180),\r\n-    );\r\n-    canvas.drawLine(hourStartOffset, hourEndOffset, hourLinePaint);\r\n-\r\n     Paint centerCirclePaint = Paint()..color = Color(0xFFE81466);\r\n \r\n     canvas.drawCircle(center, 6, centerCirclePaint);\r\n   }\r\n"
+                },
+                {
+                    "date": 1643108014613,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n     Offset center = Offset(centerX, centerY);\r\n     double outerRadius = radius - 20;\r\n     double innerRdaius = radius - 30;\r\n     DateTime datetime = DateTime.now();\r\n-    // _drawIndicators(canvas, size, scaleFactor, showAllNumbers);\r\n+    _drawIndicators(canvas, size, scaleFactor, showAllNumbers);\r\n \r\n     //dashLine for second\r\n     Paint secDashPaint = Paint()\r\n       ..color = Colors.white\r\n"
+                },
+                {
+                    "date": 1643108261535,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,8 +49,21 @@\n \r\n       canvas.drawLine(Offset(x1, y1), Offset(x2, y2), hourDashPaint);\r\n     }\r\n \r\n+    var secHandBrush = Paint()\r\n+      ..color = Color(0xFFE81466)\r\n+      ..strokeWidth = 3\r\n+      ..style = PaintingStyle.stroke;\r\n+    var minHandBrush = Paint()\r\n+      ..color = Color(0xFFBEC5D5)\r\n+      ..strokeWidth = 3\r\n+      ..style = PaintingStyle.stroke;\r\n+    var hourHandBrush = Paint()\r\n+      ..color = Color(0xFF222E63)\r\n+      ..strokeWidth = 3\r\n+      ..style = PaintingStyle.stroke;\r\n+\r\n     Paint centerCirclePaint = Paint()..color = Color(0xFFE81466);\r\n \r\n     canvas.drawCircle(center, 6, centerCirclePaint);\r\n   }\r\n"
+                },
+                {
+                    "date": 1643108333569,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -53,12 +53,16 @@\n     var secHandBrush = Paint()\r\n       ..color = Color(0xFFE81466)\r\n       ..strokeWidth = 3\r\n       ..style = PaintingStyle.stroke;\r\n+    canvas.drawLine(secStartOffset, secEndOffset, secLinePaint);\r\n+\r\n     var minHandBrush = Paint()\r\n       ..color = Color(0xFFBEC5D5)\r\n       ..strokeWidth = 3\r\n       ..style = PaintingStyle.stroke;\r\n+    canvas.drawLine(secStartOffset, secEndOffset, secLinePaint);\r\n+\r\n     var hourHandBrush = Paint()\r\n       ..color = Color(0xFF222E63)\r\n       ..strokeWidth = 3\r\n       ..style = PaintingStyle.stroke;\r\n"
+                },
+                {
+                    "date": 1643108496869,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,21 +52,25 @@\n \r\n     var secHandBrush = Paint()\r\n       ..color = Color(0xFFE81466)\r\n       ..strokeWidth = 3\r\n+      ..strokeCap = StrokeCap.round\r\n       ..style = PaintingStyle.stroke;\r\n-    canvas.drawLine(secStartOffset, secEndOffset, secLinePaint);\r\n+    canvas.drawLine(center, Offset(100, 100), secHandBrush);\r\n \r\n     var minHandBrush = Paint()\r\n       ..color = Color(0xFFBEC5D5)\r\n-      ..strokeWidth = 3\r\n+      ..strokeWidth = 4\r\n+      ..strokeCap = StrokeCap.round\r\n       ..style = PaintingStyle.stroke;\r\n-    canvas.drawLine(secStartOffset, secEndOffset, secLinePaint);\r\n+    canvas.drawLine(center, Offset(100, 100), minHandBrush);\r\n \r\n     var hourHandBrush = Paint()\r\n       ..color = Color(0xFF222E63)\r\n-      ..strokeWidth = 3\r\n+      ..strokeWidth = 6\r\n+      ..strokeCap = StrokeCap.round\r\n       ..style = PaintingStyle.stroke;\r\n+    canvas.drawLine(center, Offset(100, 100), hourHandBrush);\r\n \r\n     Paint centerCirclePaint = Paint()..color = Color(0xFFE81466);\r\n \r\n     canvas.drawCircle(center, 6, centerCirclePaint);\r\n"
+                },
+                {
+                    "date": 1643108535998,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -61,16 +61,16 @@\n       ..color = Color(0xFFBEC5D5)\r\n       ..strokeWidth = 4\r\n       ..strokeCap = StrokeCap.round\r\n       ..style = PaintingStyle.stroke;\r\n-    canvas.drawLine(center, Offset(100, 100), minHandBrush);\r\n+    canvas.drawLine(center, Offset(150, 120), minHandBrush);\r\n \r\n     var hourHandBrush = Paint()\r\n       ..color = Color(0xFF222E63)\r\n       ..strokeWidth = 6\r\n       ..strokeCap = StrokeCap.round\r\n       ..style = PaintingStyle.stroke;\r\n-    canvas.drawLine(center, Offset(100, 100), hourHandBrush);\r\n+    canvas.drawLine(center, Offset(200, 150), hourHandBrush);\r\n \r\n     Paint centerCirclePaint = Paint()..color = Color(0xFFE81466);\r\n \r\n     canvas.drawCircle(center, 6, centerCirclePaint);\r\n"
+                },
+                {
+                    "date": 1643108693780,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -54,10 +54,13 @@\n       ..color = Color(0xFFE81466)\r\n       ..strokeWidth = 3\r\n       ..strokeCap = StrokeCap.round\r\n       ..style = PaintingStyle.stroke;\r\n-    canvas.drawLine(center, Offset(100, 100), secHandBrush);\r\n+    var secHandX = centerX + cos(90 * pi / 180);\r\n+    var secHandY = centerX + sin(90 * pi / 180);\r\n \r\n+    canvas.drawLine(center, Offset(secHandX, secHandY), secHandBrush);\r\n+\r\n     var minHandBrush = Paint()\r\n       ..color = Color(0xFFBEC5D5)\r\n       ..strokeWidth = 4\r\n       ..strokeCap = StrokeCap.round\r\n"
+                },
+                {
+                    "date": 1643108753637,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -54,10 +54,10 @@\n       ..color = Color(0xFFE81466)\r\n       ..strokeWidth = 3\r\n       ..strokeCap = StrokeCap.round\r\n       ..style = PaintingStyle.stroke;\r\n-    var secHandX = centerX + cos(90 * pi / 180);\r\n-    var secHandY = centerX + sin(90 * pi / 180);\r\n+    var secHandX = centerX + 80 * cos(90 * pi / 180);\r\n+    var secHandY = centerX + 80 * sin(90 * pi / 180);\r\n \r\n     canvas.drawLine(center, Offset(secHandX, secHandY), secHandBrush);\r\n \r\n     var minHandBrush = Paint()\r\n"
+                },
+                {
+                    "date": 1643108907958,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -64,16 +64,20 @@\n       ..color = Color(0xFFBEC5D5)\r\n       ..strokeWidth = 4\r\n       ..strokeCap = StrokeCap.round\r\n       ..style = PaintingStyle.stroke;\r\n-    canvas.drawLine(center, Offset(150, 120), minHandBrush);\r\n+    var minHandX = centerX + 80 * cos(45 * pi / 180);\r\n+    var minHandY = centerX + 80 * sin(45 * pi / 180);\r\n+    canvas.drawLine(center, Offset(minHandX, minHandY), minHandBrush);\r\n \r\n     var hourHandBrush = Paint()\r\n       ..color = Color(0xFF222E63)\r\n       ..strokeWidth = 6\r\n       ..strokeCap = StrokeCap.round\r\n       ..style = PaintingStyle.stroke;\r\n-    canvas.drawLine(center, Offset(200, 150), hourHandBrush);\r\n+    var hourHandX = centerX + 60 * cos(90 * pi / 180);\r\n+    var hourHandY = centerX + 60 * sin(90 * pi / 180);\r\n+    canvas.drawLine(center, Offset(hourHandX, hourHandY), hourHandBrush);\r\n \r\n     Paint centerCirclePaint = Paint()..color = Color(0xFFE81466);\r\n \r\n     canvas.drawCircle(center, 6, centerCirclePaint);\r\n"
+                },
+                {
+                    "date": 1643108949827,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n     double radius = min(centerX, centerY);\r\n     Offset center = Offset(centerX, centerY);\r\n     double outerRadius = radius - 20;\r\n     double innerRdaius = radius - 30;\r\n-    DateTime datetime = DateTime.now();\r\n+    DateTime dateTime = DateTime.now();\r\n     _drawIndicators(canvas, size, scaleFactor, showAllNumbers);\r\n \r\n     //dashLine for second\r\n     Paint secDashPaint = Paint()\r\n"
+                },
+                {
+                    "date": 1643109101602,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -54,10 +54,11 @@\n       ..color = Color(0xFFE81466)\r\n       ..strokeWidth = 3\r\n       ..strokeCap = StrokeCap.round\r\n       ..style = PaintingStyle.stroke;\r\n-    var secHandX = centerX + 80 * cos(90 * pi / 180);\r\n-    var secHandY = centerX + 80 * sin(90 * pi / 180);\r\n+    //60 sec-360,1 sec =6 degree\r\n+    var secHandX = centerX + 80 * cos(dateTime.second * 6 * pi / 180);\r\n+    var secHandY = centerX + 80 * sin(dateTime.second * 6 * pi / 180);\r\n \r\n     canvas.drawLine(center, Offset(secHandX, secHandY), secHandBrush);\r\n \r\n     var minHandBrush = Paint()\r\n"
+                },
+                {
+                    "date": 1643109159876,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -65,10 +65,10 @@\n       ..color = Color(0xFFBEC5D5)\r\n       ..strokeWidth = 4\r\n       ..strokeCap = StrokeCap.round\r\n       ..style = PaintingStyle.stroke;\r\n-    var minHandX = centerX + 80 * cos(45 * pi / 180);\r\n-    var minHandY = centerX + 80 * sin(45 * pi / 180);\r\n+    var minHandX = centerX + 80 * cos(dateTime.minute * 6 * pi / 180);\r\n+    var minHandY = centerX + 80 * sin(dateTime.minute * 6 * pi / 180);\r\n     canvas.drawLine(center, Offset(minHandX, minHandY), minHandBrush);\r\n \r\n     var hourHandBrush = Paint()\r\n       ..color = Color(0xFF222E63)\r\n"
+                },
+                {
+                    "date": 1643109255047,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -74,10 +74,10 @@\n       ..color = Color(0xFF222E63)\r\n       ..strokeWidth = 6\r\n       ..strokeCap = StrokeCap.round\r\n       ..style = PaintingStyle.stroke;\r\n-    var hourHandX = centerX + 60 * cos(90 * pi / 180);\r\n-    var hourHandY = centerX + 60 * sin(90 * pi / 180);\r\n+    var hourHandX = centerX + 60 * cos(dateTime.hour * 30 * pi / 180);\r\n+    var hourHandY = centerX + 60 * sin(dateTime.hour * 30 * pi / 180);\r\n     canvas.drawLine(center, Offset(hourHandX, hourHandY), hourHandBrush);\r\n \r\n     Paint centerCirclePaint = Paint()..color = Color(0xFFE81466);\r\n \r\n"
+                },
+                {
+                    "date": 1643109347089,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -74,10 +74,12 @@\n       ..color = Color(0xFF222E63)\r\n       ..strokeWidth = 6\r\n       ..strokeCap = StrokeCap.round\r\n       ..style = PaintingStyle.stroke;\r\n-    var hourHandX = centerX + 60 * cos(dateTime.hour * 30 * pi / 180);\r\n-    var hourHandY = centerX + 60 * sin(dateTime.hour * 30 * pi / 180);\r\n+    var hourHandX = centerX +\r\n+        60 * cos((dateTime.hour * 30 + dateTime.minute * 0.5) * pi / 180);\r\n+    var hourHandY = centerX +\r\n+        60 * sin((dateTime.hour * 30 + dateTime.minute * 0.5) * pi / 180);\r\n     canvas.drawLine(center, Offset(hourHandX, hourHandY), hourHandBrush);\r\n \r\n     Paint centerCirclePaint = Paint()..color = Color(0xFFE81466);\r\n \r\n"
+                },
+                {
+                    "date": 1643109451713,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -48,9 +48,9 @@\n       double y2 = centerX - innerRdaius * sin(i * pi / 180);\r\n \r\n       canvas.drawLine(Offset(x1, y1), Offset(x2, y2), hourDashPaint);\r\n     }\r\n-\r\n+//second hand paint\r\n     var secHandBrush = Paint()\r\n       ..color = Color(0xFFE81466)\r\n       ..strokeWidth = 3\r\n       ..strokeCap = StrokeCap.round\r\n@@ -60,8 +60,9 @@\n     var secHandY = centerX + 80 * sin(dateTime.second * 6 * pi / 180);\r\n \r\n     canvas.drawLine(center, Offset(secHandX, secHandY), secHandBrush);\r\n \r\n+//minute hand paint\r\n     var minHandBrush = Paint()\r\n       ..color = Color(0xFFBEC5D5)\r\n       ..strokeWidth = 4\r\n       ..strokeCap = StrokeCap.round\r\n@@ -69,8 +70,9 @@\n     var minHandX = centerX + 80 * cos(dateTime.minute * 6 * pi / 180);\r\n     var minHandY = centerX + 80 * sin(dateTime.minute * 6 * pi / 180);\r\n     canvas.drawLine(center, Offset(minHandX, minHandY), minHandBrush);\r\n \r\n+//hour hand paint\r\n     var hourHandBrush = Paint()\r\n       ..color = Color(0xFF222E63)\r\n       ..strokeWidth = 6\r\n       ..strokeCap = StrokeCap.round\r\n"
+                },
+                {
+                    "date": 1643109504426,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -107,9 +107,9 @@\n   double longHandLength = r - (p * scaleFactor);\r\n \r\n   for (var h = 1; h <= 12; h++) {\r\n     if (!showAllNumbers && h % 3 != 0) continue;\r\n-    double angle = (h * pi / 6) - pi; //+ pi / 2;\r\n+    double angle = (h * pi / 6) - pi / 2; //+ pi / 2;\r\n     Offset offset =\r\n         Offset(longHandLength * cos(angle), longHandLength * sin(angle));\r\n     TextSpan span = TextSpan(style: style, text: h.toString());\r\n     TextPainter tp = TextPainter(\r\n"
+                },
+                {
+                    "date": 1643109510847,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -107,9 +107,9 @@\n   double longHandLength = r - (p * scaleFactor);\r\n \r\n   for (var h = 1; h <= 12; h++) {\r\n     if (!showAllNumbers && h % 3 != 0) continue;\r\n-    double angle = (h * pi / 6) - pi / 2; //+ pi / 2;\r\n+    double angle = (h * pi / 6) - pi / 3; //+ pi / 2;\r\n     Offset offset =\r\n         Offset(longHandLength * cos(angle), longHandLength * sin(angle));\r\n     TextSpan span = TextSpan(style: style, text: h.toString());\r\n     TextPainter tp = TextPainter(\r\n"
+                },
+                {
+                    "date": 1643109518304,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -107,9 +107,9 @@\n   double longHandLength = r - (p * scaleFactor);\r\n \r\n   for (var h = 1; h <= 12; h++) {\r\n     if (!showAllNumbers && h % 3 != 0) continue;\r\n-    double angle = (h * pi / 6) - pi / 3; //+ pi / 2;\r\n+    double angle = (h * pi / 6) - pi / 5; //+ pi / 2;\r\n     Offset offset =\r\n         Offset(longHandLength * cos(angle), longHandLength * sin(angle));\r\n     TextSpan span = TextSpan(style: style, text: h.toString());\r\n     TextPainter tp = TextPainter(\r\n"
+                },
+                {
+                    "date": 1643109525479,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -107,9 +107,9 @@\n   double longHandLength = r - (p * scaleFactor);\r\n \r\n   for (var h = 1; h <= 12; h++) {\r\n     if (!showAllNumbers && h % 3 != 0) continue;\r\n-    double angle = (h * pi / 6) - pi / 5; //+ pi / 2;\r\n+    double angle = (h * pi / 6) - pi / 7; //+ pi / 2;\r\n     Offset offset =\r\n         Offset(longHandLength * cos(angle), longHandLength * sin(angle));\r\n     TextSpan span = TextSpan(style: style, text: h.toString());\r\n     TextPainter tp = TextPainter(\r\n"
+                },
+                {
+                    "date": 1643109533115,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -107,9 +107,9 @@\n   double longHandLength = r - (p * scaleFactor);\r\n \r\n   for (var h = 1; h <= 12; h++) {\r\n     if (!showAllNumbers && h % 3 != 0) continue;\r\n-    double angle = (h * pi / 6) - pi / 7; //+ pi / 2;\r\n+    double angle = (h * pi / 6) - pi / 12; //+ pi / 2;\r\n     Offset offset =\r\n         Offset(longHandLength * cos(angle), longHandLength * sin(angle));\r\n     TextSpan span = TextSpan(style: style, text: h.toString());\r\n     TextPainter tp = TextPainter(\r\n"
+                },
+                {
+                    "date": 1643109538657,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -107,9 +107,9 @@\n   double longHandLength = r - (p * scaleFactor);\r\n \r\n   for (var h = 1; h <= 12; h++) {\r\n     if (!showAllNumbers && h % 3 != 0) continue;\r\n-    double angle = (h * pi / 6) - pi / 12; //+ pi / 2;\r\n+    double angle = (h * pi / 6) - pi / 14; //+ pi / 2;\r\n     Offset offset =\r\n         Offset(longHandLength * cos(angle), longHandLength * sin(angle));\r\n     TextSpan span = TextSpan(style: style, text: h.toString());\r\n     TextPainter tp = TextPainter(\r\n"
+                },
+                {
+                    "date": 1643109548276,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -107,9 +107,9 @@\n   double longHandLength = r - (p * scaleFactor);\r\n \r\n   for (var h = 1; h <= 12; h++) {\r\n     if (!showAllNumbers && h % 3 != 0) continue;\r\n-    double angle = (h * pi / 6) - pi / 14; //+ pi / 2;\r\n+    double angle = (h * pi / 6) - pi / 24; //+ pi / 2;\r\n     Offset offset =\r\n         Offset(longHandLength * cos(angle), longHandLength * sin(angle));\r\n     TextSpan span = TextSpan(style: style, text: h.toString());\r\n     TextPainter tp = TextPainter(\r\n"
+                },
+                {
+                    "date": 1643109559774,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -107,9 +107,9 @@\n   double longHandLength = r - (p * scaleFactor);\r\n \r\n   for (var h = 1; h <= 12; h++) {\r\n     if (!showAllNumbers && h % 3 != 0) continue;\r\n-    double angle = (h * pi / 6) - pi / 24; //+ pi / 2;\r\n+    double angle = (h * pi / 6) - pi / 45; //+ pi / 2;\r\n     Offset offset =\r\n         Offset(longHandLength * cos(angle), longHandLength * sin(angle));\r\n     TextSpan span = TextSpan(style: style, text: h.toString());\r\n     TextPainter tp = TextPainter(\r\n"
+                },
+                {
+                    "date": 1643109572360,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -107,9 +107,9 @@\n   double longHandLength = r - (p * scaleFactor);\r\n \r\n   for (var h = 1; h <= 12; h++) {\r\n     if (!showAllNumbers && h % 3 != 0) continue;\r\n-    double angle = (h * pi / 6) - pi / 45; //+ pi / 2;\r\n+    double angle = (h * pi / 6) - pi / 90; //+ pi / 2;\r\n     Offset offset =\r\n         Offset(longHandLength * cos(angle), longHandLength * sin(angle));\r\n     TextSpan span = TextSpan(style: style, text: h.toString());\r\n     TextPainter tp = TextPainter(\r\n"
+                },
+                {
+                    "date": 1643109578791,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -107,9 +107,9 @@\n   double longHandLength = r - (p * scaleFactor);\r\n \r\n   for (var h = 1; h <= 12; h++) {\r\n     if (!showAllNumbers && h % 3 != 0) continue;\r\n-    double angle = (h * pi / 6) - pi / 90; //+ pi / 2;\r\n+    double angle = (h * pi / 6) - pi / 120; //+ pi / 2;\r\n     Offset offset =\r\n         Offset(longHandLength * cos(angle), longHandLength * sin(angle));\r\n     TextSpan span = TextSpan(style: style, text: h.toString());\r\n     TextPainter tp = TextPainter(\r\n"
+                },
+                {
+                    "date": 1643109599014,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -107,9 +107,9 @@\n   double longHandLength = r - (p * scaleFactor);\r\n \r\n   for (var h = 1; h <= 12; h++) {\r\n     if (!showAllNumbers && h % 3 != 0) continue;\r\n-    double angle = (h * pi / 6) - pi / 120; //+ pi / 2;\r\n+    double angle = (h * pi / 6); //+ pi / 2;\r\n     Offset offset =\r\n         Offset(longHandLength * cos(angle), longHandLength * sin(angle));\r\n     TextSpan span = TextSpan(style: style, text: h.toString());\r\n     TextPainter tp = TextPainter(\r\n"
                 }
             ],
             "date": 1643022982541,

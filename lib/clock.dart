@@ -79,7 +79,7 @@ class _ClockState extends State<Clock> {
             ),
           ),
           Transform.rotate(
-            angle: pi / 2,
+            angle: -pi / 2,
             child: Container(
               constraints: BoxConstraints.expand(),
               child: CustomPaint(

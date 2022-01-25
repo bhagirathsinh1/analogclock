@@ -10,14 +10,13 @@ class ClockPainter extends CustomPainter {
     const double BASE_SIZE = 320.0;
     bool showAllNumbers = true;
     double scaleFactor = size.shortestSide / BASE_SIZE;
-    bool showTicks = true;
     double centerX = size.width / 2;
     double centerY = size.height / 2;
     double radius = min(centerX, centerY);
     Offset center = Offset(centerX, centerY);
     double outerRadius = radius - 20;
     double innerRdaius = radius - 30;
-    DateTime datetime = DateTime.now();
+    DateTime dateTime = DateTime.now();
     _drawIndicators(canvas, size, scaleFactor, showAllNumbers);
 
     //dashLine for second
@@ -50,55 +49,39 @@ class ClockPainter extends CustomPainter {
 
       canvas.drawLine(Offset(x1, y1), Offset(x2, y2), hourDashPaint);
     }
-
-    //second hand
-    Paint secLinePaint = Paint()
+//second hand paint
+    var secHandBrush = Paint()
       ..color = Color(0xFFE81466)
       ..strokeWidth = 3
-      ..strokeCap = StrokeCap.round;
+      ..strokeCap = StrokeCap.round
+      ..style = PaintingStyle.stroke;
+    //60 sec-360,1 sec =6 degree
+    var secHandX = centerX + 80 * cos(dateTime.second * 6 * pi / 180);
+    var secHandY = centerX + 80 * sin(dateTime.second * 6 * pi / 180);
 
-    Offset secEndOffset = Offset(
-      centerX + 15 * cos(datetime.second * 6 * pi / 180),
-      centerY + 15 * sin(datetime.second * 6 * pi / 180),
-    );
-    Offset secStartOffset = Offset(
-      centerX - outerRadius * cos(datetime.second * 6 * pi / 180),
-      centerY - outerRadius * sin(datetime.second * 6 * pi / 180),
-    );
-    canvas.drawLine(secStartOffset, secEndOffset, secLinePaint);
+    canvas.drawLine(center, Offset(secHandX, secHandY), secHandBrush);
 
-//minute hand
-    Paint minLinePaint = Paint()
+//minute hand paint
+    var minHandBrush = Paint()
       ..color = Color(0xFFBEC5D5)
       ..strokeWidth = 4
-      ..strokeCap = StrokeCap.round;
+      ..strokeCap = StrokeCap.round
+      ..style = PaintingStyle.stroke;
+    var minHandX = centerX + 80 * cos(dateTime.minute * 6 * pi / 180);
+    var minHandY = centerX + 80 * sin(dateTime.minute * 6 * pi / 180);
+    canvas.drawLine(center, Offset(minHandX, minHandY), minHandBrush);
 
-    Offset minEndOffset = Offset(
-      centerX - outerRadius * .6 * cos(datetime.minute * 6 * pi / 180),
-      centerY - outerRadius * .6 * sin(datetime.minute * 6 * pi / 180),
-    );
-    Offset minStartOffset = Offset(
-      centerX + 15 * cos(datetime.minute * 6 * pi / 180),
-      centerY + 15 * sin(datetime.minute * 6 * pi / 180),
-    );
-    canvas.drawLine(minStartOffset, minEndOffset, minLinePaint);
-
-//hour hand
-
-    Paint hourLinePaint = Paint()
+//hour hand paint
+    var hourHandBrush = Paint()
       ..color = Color(0xFF222E63)
       ..strokeWidth = 6
-      ..strokeCap = StrokeCap.round;
-
-    Offset hourEndOffset = Offset(
-      centerX - outerRadius * .8 * cos(datetime.hour * 8 * pi / 180),
-      centerY - outerRadius * .8 * sin(datetime.hour * 10 * pi / 180),
-    );
-    Offset hourStartOffset = Offset(
-      centerX + 15 * cos(datetime.hour * 8 * pi / 180),
-      centerY + 15 * sin(datetime.hour * 10 * pi / 180),
-    );
-    canvas.drawLine(hourStartOffset, hourEndOffset, hourLinePaint);
+      ..strokeCap = StrokeCap.round
+      ..style = PaintingStyle.stroke;
+    var hourHandX = centerX +
+        60 * cos((dateTime.hour * 30 + dateTime.minute * 0.5) * pi / 180);
+    var hourHandY = centerX +
+        60 * sin((dateTime.hour * 30 + dateTime.minute * 0.5) * pi / 180);
+    canvas.drawLine(center, Offset(hourHandX, hourHandY), hourHandBrush);
 
     Paint centerCirclePaint = Paint()..color = Color(0xFFE81466);
 
@@ -125,16 +108,18 @@ void _drawIndicators(
 
   for (var h = 1; h <= 12; h++) {
     if (!showAllNumbers && h % 3 != 0) continue;
-    double angle = (h * pi / 6) - pi; //+ pi / 2;
+    double angle = (h * pi / 6); //+ pi / 2;
     Offset offset =
         Offset(longHandLength * cos(angle), longHandLength * sin(angle));
     TextSpan span = TextSpan(style: style, text: h.toString());
     TextPainter tp = TextPainter(
       text: span,
       textAlign: TextAlign.center,
-      textDirection: TextDirection.ltr,
+      textDirection: TextDirection.rtl,
     );
+
     tp.layout();
+
     tp.paint(canvas, size.center(offset - tp.size.center(Offset.zero)));
   }
 }
