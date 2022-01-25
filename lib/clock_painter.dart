@@ -71,7 +71,7 @@ class ClockPainter extends CustomPainter {
     var minHandY = centerX + 80 * sin(dateTime.minute * 6 * pi / 180);
     canvas.drawLine(center, Offset(minHandX, minHandY), minHandBrush);
 
-//hour hand paint
+//hour hand
     var hourHandBrush = Paint()
       ..color = Color(0xFF222E63)
       ..strokeWidth = 6
@@ -100,24 +100,23 @@ void _drawIndicators(
       color: Colors.black,
       fontWeight: FontWeight.bold,
       fontSize: 16.0 * scaleFactor * 1.0);
-  double p = 10.0;
+  double p = 8.0;
   // p += 24.0;
 
   double r = size.shortestSide / 2;
   double longHandLength = r - (p * scaleFactor);
 
   for (var h = 1; h <= 12; h++) {
-    if (!showAllNumbers && h % 3 != 0) continue;
+    // if (!showAllNumbers && h % 3 != 80) continue;
     double angle = (h * pi / 6); //+ pi / 2;
     Offset offset =
         Offset(longHandLength * cos(angle), longHandLength * sin(angle));
     TextSpan span = TextSpan(style: style, text: h.toString());
     TextPainter tp = TextPainter(
       text: span,
-      textAlign: TextAlign.center,
+      // textAlign: TextAlign.center,
       textDirection: TextDirection.rtl,
     );
-
     tp.layout();
 
     tp.paint(canvas, size.center(offset - tp.size.center(Offset.zero)));
