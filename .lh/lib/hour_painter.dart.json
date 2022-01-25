@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 21,
+            "activePatchIndex": 57,
             "patches": [
                 {
                     "date": 1643111608597,
@@ -92,6 +92,150 @@
                 {
                     "date": 1643112606830,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n   TextStyle style = TextStyle(\r\n       color: Colors.black,\r\n       fontWeight: FontWeight.bold,\r\n       fontSize: 16.0 * scaleFactor * 1.0);\r\n-  double p = 8.0;\r\n+  double p = 9.0;\r\n   // p += 24.0;\r\n \r\n   double r = size.shortestSide / 2;\r\n   double longHandLength = r - (p * scaleFactor);\r\n"
+                },
+                {
+                    "date": 1643112842693,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,12 +6,10 @@\n \r\n class HourPainter extends CustomPainter {\r\n   @override\r\n   void paint(Canvas canvas, Size size) {\r\n-    const double BASE_SIZE = 320.0;\r\n     bool showAllNumbers = true;\r\n-    double scaleFactor = size.shortestSide / BASE_SIZE;\r\n-\r\n+    double scaleFactor = size.shortestSide / 320.0;\r\n     _drawIndicators(canvas, size, scaleFactor, showAllNumbers);\r\n   }\r\n \r\n   @override\r\n"
+                },
+                {
+                    "date": 1643112866435,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n \r\n   double r = size.shortestSide / 2;\r\n   double longHandLength = r - (p * scaleFactor);\r\n \r\n-  for (var h = 1; h <= 12; h++) {\r\n+  for (var h = 1; h <= 60; h++) {\r\n     // if (!showAllNumbers && h % 3 != 80) continue;\r\n     double angle = (h * pi / 6) - pi / 2; //+ pi / 2;\r\n     Offset offset =\r\n         Offset(longHandLength * cos(angle), longHandLength * sin(angle));\r\n"
+                },
+                {
+                    "date": 1643112873687,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n   double longHandLength = r - (p * scaleFactor);\r\n \r\n   for (var h = 1; h <= 60; h++) {\r\n     // if (!showAllNumbers && h % 3 != 80) continue;\r\n-    double angle = (h * pi / 6) - pi / 2; //+ pi / 2;\r\n+    double angle = (h * pi / 1) - pi / 2; //+ pi / 2;\r\n     Offset offset =\r\n         Offset(longHandLength * cos(angle), longHandLength * sin(angle));\r\n     TextSpan span = TextSpan(style: style, text: h.toString());\r\n     TextPainter tp = TextPainter(\r\n"
+                },
+                {
+                    "date": 1643112878975,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n   double longHandLength = r - (p * scaleFactor);\r\n \r\n   for (var h = 1; h <= 60; h++) {\r\n     // if (!showAllNumbers && h % 3 != 80) continue;\r\n-    double angle = (h * pi / 1) - pi / 2; //+ pi / 2;\r\n+    double angle = (h * pi) - pi / 2; //+ pi / 2;\r\n     Offset offset =\r\n         Offset(longHandLength * cos(angle), longHandLength * sin(angle));\r\n     TextSpan span = TextSpan(style: style, text: h.toString());\r\n     TextPainter tp = TextPainter(\r\n"
+                },
+                {
+                    "date": 1643112885814,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n   double longHandLength = r - (p * scaleFactor);\r\n \r\n   for (var h = 1; h <= 60; h++) {\r\n     // if (!showAllNumbers && h % 3 != 80) continue;\r\n-    double angle = (h * pi) - pi / 2; //+ pi / 2;\r\n+    double angle = (h * pi / 2) - pi / 2; //+ pi / 2;\r\n     Offset offset =\r\n         Offset(longHandLength * cos(angle), longHandLength * sin(angle));\r\n     TextSpan span = TextSpan(style: style, text: h.toString());\r\n     TextPainter tp = TextPainter(\r\n"
+                },
+                {
+                    "date": 1643112892381,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n   double longHandLength = r - (p * scaleFactor);\r\n \r\n   for (var h = 1; h <= 60; h++) {\r\n     // if (!showAllNumbers && h % 3 != 80) continue;\r\n-    double angle = (h * pi / 2) - pi / 2; //+ pi / 2;\r\n+    double angle = (h * pi / 60) - pi / 2; //+ pi / 2;\r\n     Offset offset =\r\n         Offset(longHandLength * cos(angle), longHandLength * sin(angle));\r\n     TextSpan span = TextSpan(style: style, text: h.toString());\r\n     TextPainter tp = TextPainter(\r\n"
+                },
+                {
+                    "date": 1643112902040,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n   double longHandLength = r - (p * scaleFactor);\r\n \r\n   for (var h = 1; h <= 60; h++) {\r\n     // if (!showAllNumbers && h % 3 != 80) continue;\r\n-    double angle = (h * pi / 60) - pi / 2; //+ pi / 2;\r\n+    double angle = (h * pi / 360) - pi / 2; //+ pi / 2;\r\n     Offset offset =\r\n         Offset(longHandLength * cos(angle), longHandLength * sin(angle));\r\n     TextSpan span = TextSpan(style: style, text: h.toString());\r\n     TextPainter tp = TextPainter(\r\n"
+                },
+                {
+                    "date": 1643112929327,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,18 +22,18 @@\n     Canvas canvas, Size size, double scaleFactor, bool showAllNumbers) {\r\n   TextStyle style = TextStyle(\r\n       color: Colors.black,\r\n       fontWeight: FontWeight.bold,\r\n-      fontSize: 16.0 * scaleFactor * 1.0);\r\n+      fontSize: 8.0 * scaleFactor * 1.0);\r\n   double p = 9.0;\r\n   // p += 24.0;\r\n \r\n   double r = size.shortestSide / 2;\r\n   double longHandLength = r - (p * scaleFactor);\r\n \r\n   for (var h = 1; h <= 60; h++) {\r\n     // if (!showAllNumbers && h % 3 != 80) continue;\r\n-    double angle = (h * pi / 360) - pi / 2; //+ pi / 2;\r\n+    double angle = (h * pi / 30) - pi / 2; //+ pi / 2;\r\n     Offset offset =\r\n         Offset(longHandLength * cos(angle), longHandLength * sin(angle));\r\n     TextSpan span = TextSpan(style: style, text: h.toString());\r\n     TextPainter tp = TextPainter(\r\n"
+                },
+                {
+                    "date": 1643113061774,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n \r\n   double r = size.shortestSide / 2;\r\n   double longHandLength = r - (p * scaleFactor);\r\n \r\n-  for (var h = 1; h <= 60; h++) {\r\n+  for (var h = 1; h <= 12; h++) {\r\n     // if (!showAllNumbers && h % 3 != 80) continue;\r\n     double angle = (h * pi / 30) - pi / 2; //+ pi / 2;\r\n     Offset offset =\r\n         Offset(longHandLength * cos(angle), longHandLength * sin(angle));\r\n"
+                },
+                {
+                    "date": 1643113073001,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n   double longHandLength = r - (p * scaleFactor);\r\n \r\n   for (var h = 1; h <= 12; h++) {\r\n     // if (!showAllNumbers && h % 3 != 80) continue;\r\n-    double angle = (h * pi / 30) - pi / 2; //+ pi / 2;\r\n+    double angle = (h * pi) - pi / 2; //+ pi / 2;\r\n     Offset offset =\r\n         Offset(longHandLength * cos(angle), longHandLength * sin(angle));\r\n     TextSpan span = TextSpan(style: style, text: h.toString());\r\n     TextPainter tp = TextPainter(\r\n"
+                },
+                {
+                    "date": 1643113078273,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n   double longHandLength = r - (p * scaleFactor);\r\n \r\n   for (var h = 1; h <= 12; h++) {\r\n     // if (!showAllNumbers && h % 3 != 80) continue;\r\n-    double angle = (h * pi) - pi / 2; //+ pi / 2;\r\n+    double angle = (h * pi / 2) - pi / 2; //+ pi / 2;\r\n     Offset offset =\r\n         Offset(longHandLength * cos(angle), longHandLength * sin(angle));\r\n     TextSpan span = TextSpan(style: style, text: h.toString());\r\n     TextPainter tp = TextPainter(\r\n"
+                },
+                {
+                    "date": 1643113089304,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n \r\n   double r = size.shortestSide / 2;\r\n   double longHandLength = r - (p * scaleFactor);\r\n \r\n-  for (var h = 1; h <= 12; h++) {\r\n+  for (var h = 1; h <= 4; h++) {\r\n     // if (!showAllNumbers && h % 3 != 80) continue;\r\n     double angle = (h * pi / 2) - pi / 2; //+ pi / 2;\r\n     Offset offset =\r\n         Offset(longHandLength * cos(angle), longHandLength * sin(angle));\r\n"
+                },
+                {
+                    "date": 1643113105259,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,11 +29,11 @@\n \r\n   double r = size.shortestSide / 2;\r\n   double longHandLength = r - (p * scaleFactor);\r\n \r\n-  for (var h = 1; h <= 4; h++) {\r\n+  for (var h = 1; h <= 12; h++) {\r\n     // if (!showAllNumbers && h % 3 != 80) continue;\r\n-    double angle = (h * pi / 2) - pi / 2; //+ pi / 2;\r\n+    double angle = (h * pi / 4) - pi / 2; //+ pi / 2;\r\n     Offset offset =\r\n         Offset(longHandLength * cos(angle), longHandLength * sin(angle));\r\n     TextSpan span = TextSpan(style: style, text: h.toString());\r\n     TextPainter tp = TextPainter(\r\n"
+                },
+                {
+                    "date": 1643113110511,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n   double longHandLength = r - (p * scaleFactor);\r\n \r\n   for (var h = 1; h <= 12; h++) {\r\n     // if (!showAllNumbers && h % 3 != 80) continue;\r\n-    double angle = (h * pi / 4) - pi / 2; //+ pi / 2;\r\n+    double angle = (h * pi / 8) - pi / 2; //+ pi / 2;\r\n     Offset offset =\r\n         Offset(longHandLength * cos(angle), longHandLength * sin(angle));\r\n     TextSpan span = TextSpan(style: style, text: h.toString());\r\n     TextPainter tp = TextPainter(\r\n"
+                },
+                {
+                    "date": 1643113118008,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n   double longHandLength = r - (p * scaleFactor);\r\n \r\n   for (var h = 1; h <= 12; h++) {\r\n     // if (!showAllNumbers && h % 3 != 80) continue;\r\n-    double angle = (h * pi / 8) - pi / 2; //+ pi / 2;\r\n+    double angle = (h * pi / 12) - pi / 2; //+ pi / 2;\r\n     Offset offset =\r\n         Offset(longHandLength * cos(angle), longHandLength * sin(angle));\r\n     TextSpan span = TextSpan(style: style, text: h.toString());\r\n     TextPainter tp = TextPainter(\r\n"
+                },
+                {
+                    "date": 1643113127635,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n   double longHandLength = r - (p * scaleFactor);\r\n \r\n   for (var h = 1; h <= 12; h++) {\r\n     // if (!showAllNumbers && h % 3 != 80) continue;\r\n-    double angle = (h * pi / 12) - pi / 2; //+ pi / 2;\r\n+    double angle = (h * pi / 9) - pi / 2; //+ pi / 2;\r\n     Offset offset =\r\n         Offset(longHandLength * cos(angle), longHandLength * sin(angle));\r\n     TextSpan span = TextSpan(style: style, text: h.toString());\r\n     TextPainter tp = TextPainter(\r\n"
+                },
+                {
+                    "date": 1643113181910,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n   double longHandLength = r - (p * scaleFactor);\r\n \r\n   for (var h = 1; h <= 12; h++) {\r\n     // if (!showAllNumbers && h % 3 != 80) continue;\r\n-    double angle = (h * pi / 9) - pi / 2; //+ pi / 2;\r\n+    double angle = (h * pi / 12) - pi / 2; //+ pi / 2;\r\n     Offset offset =\r\n         Offset(longHandLength * cos(angle), longHandLength * sin(angle));\r\n     TextSpan span = TextSpan(style: style, text: h.toString());\r\n     TextPainter tp = TextPainter(\r\n"
+                },
+                {
+                    "date": 1643113217854,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n   double longHandLength = r - (p * scaleFactor);\r\n \r\n   for (var h = 1; h <= 12; h++) {\r\n     // if (!showAllNumbers && h % 3 != 80) continue;\r\n-    double angle = (h * pi / 12) - pi / 2; //+ pi / 2;\r\n+    double angle = 15 - pi / 2; //+ pi / 2;\r\n     Offset offset =\r\n         Offset(longHandLength * cos(angle), longHandLength * sin(angle));\r\n     TextSpan span = TextSpan(style: style, text: h.toString());\r\n     TextPainter tp = TextPainter(\r\n"
+                },
+                {
+                    "date": 1643113223978,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n   double longHandLength = r - (p * scaleFactor);\r\n \r\n   for (var h = 1; h <= 12; h++) {\r\n     // if (!showAllNumbers && h % 3 != 80) continue;\r\n-    double angle = 15 - pi / 2; //+ pi / 2;\r\n+    double angle = 45 - pi / 2; //+ pi / 2;\r\n     Offset offset =\r\n         Offset(longHandLength * cos(angle), longHandLength * sin(angle));\r\n     TextSpan span = TextSpan(style: style, text: h.toString());\r\n     TextPainter tp = TextPainter(\r\n"
+                },
+                {
+                    "date": 1643113229940,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n   double longHandLength = r - (p * scaleFactor);\r\n \r\n   for (var h = 1; h <= 12; h++) {\r\n     // if (!showAllNumbers && h % 3 != 80) continue;\r\n-    double angle = 45 - pi / 2; //+ pi / 2;\r\n+    double angle = (h * pi / 12) - pi / 2; //+ pi / 2;\r\n     Offset offset =\r\n         Offset(longHandLength * cos(angle), longHandLength * sin(angle));\r\n     TextSpan span = TextSpan(style: style, text: h.toString());\r\n     TextPainter tp = TextPainter(\r\n"
+                },
+                {
+                    "date": 1643113237079,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n   double longHandLength = r - (p * scaleFactor);\r\n \r\n   for (var h = 1; h <= 12; h++) {\r\n     // if (!showAllNumbers && h % 3 != 80) continue;\r\n-    double angle = (h * pi / 12) - pi / 2; //+ pi / 2;\r\n+    double angle = (h * pi / 3) - pi / 2; //+ pi / 2;\r\n     Offset offset =\r\n         Offset(longHandLength * cos(angle), longHandLength * sin(angle));\r\n     TextSpan span = TextSpan(style: style, text: h.toString());\r\n     TextPainter tp = TextPainter(\r\n"
+                },
+                {
+                    "date": 1643113244651,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n   double longHandLength = r - (p * scaleFactor);\r\n \r\n   for (var h = 1; h <= 12; h++) {\r\n     // if (!showAllNumbers && h % 3 != 80) continue;\r\n-    double angle = (h * pi / 3) - pi / 2; //+ pi / 2;\r\n+    double angle = (h * pi / 2) - pi / 2; //+ pi / 2;\r\n     Offset offset =\r\n         Offset(longHandLength * cos(angle), longHandLength * sin(angle));\r\n     TextSpan span = TextSpan(style: style, text: h.toString());\r\n     TextPainter tp = TextPainter(\r\n"
+                },
+                {
+                    "date": 1643113460169,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n   double r = size.shortestSide / 2;\r\n   double longHandLength = r - (p * scaleFactor);\r\n \r\n   for (var h = 1; h <= 12; h++) {\r\n-    // if (!showAllNumbers && h % 3 != 80) continue;\r\n+    if (!showAllNumbers && h % 3 != 80) continue;\r\n     double angle = (h * pi / 2) - pi / 2; //+ pi / 2;\r\n     Offset offset =\r\n         Offset(longHandLength * cos(angle), longHandLength * sin(angle));\r\n     TextSpan span = TextSpan(style: style, text: h.toString());\r\n"
+                },
+                {
+                    "date": 1643113518121,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n   double r = size.shortestSide / 2;\r\n   double longHandLength = r - (p * scaleFactor);\r\n \r\n   for (var h = 1; h <= 12; h++) {\r\n-    if (!showAllNumbers && h % 3 != 80) continue;\r\n+    if (h != 12 || h != 3 || h != 6 || h != 9) continue;\r\n     double angle = (h * pi / 2) - pi / 2; //+ pi / 2;\r\n     Offset offset =\r\n         Offset(longHandLength * cos(angle), longHandLength * sin(angle));\r\n     TextSpan span = TextSpan(style: style, text: h.toString());\r\n"
+                },
+                {
+                    "date": 1643113588923,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n   double r = size.shortestSide / 2;\r\n   double longHandLength = r - (p * scaleFactor);\r\n \r\n   for (var h = 1; h <= 12; h++) {\r\n-    if (h != 12 || h != 3 || h != 6 || h != 9) continue;\r\n+    if (h = 4) continue;\r\n     double angle = (h * pi / 2) - pi / 2; //+ pi / 2;\r\n     Offset offset =\r\n         Offset(longHandLength * cos(angle), longHandLength * sin(angle));\r\n     TextSpan span = TextSpan(style: style, text: h.toString());\r\n"
+                },
+                {
+                    "date": 1643113594977,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n   double r = size.shortestSide / 2;\r\n   double longHandLength = r - (p * scaleFactor);\r\n \r\n   for (var h = 1; h <= 12; h++) {\r\n-    if (h = 4) continue;\r\n+    if (h == 4) continue;\r\n     double angle = (h * pi / 2) - pi / 2; //+ pi / 2;\r\n     Offset offset =\r\n         Offset(longHandLength * cos(angle), longHandLength * sin(angle));\r\n     TextSpan span = TextSpan(style: style, text: h.toString());\r\n"
+                },
+                {
+                    "date": 1643113601624,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n   double longHandLength = r - (p * scaleFactor);\r\n \r\n   for (var h = 1; h <= 12; h++) {\r\n     if (h == 4) continue;\r\n-    double angle = (h * pi / 2) - pi / 2; //+ pi / 2;\r\n+    double angle = (h * pi / 4) - pi / 2; //+ pi / 2;\r\n     Offset offset =\r\n         Offset(longHandLength * cos(angle), longHandLength * sin(angle));\r\n     TextSpan span = TextSpan(style: style, text: h.toString());\r\n     TextPainter tp = TextPainter(\r\n"
+                },
+                {
+                    "date": 1643113610636,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n   double longHandLength = r - (p * scaleFactor);\r\n \r\n   for (var h = 1; h <= 12; h++) {\r\n     if (h == 4) continue;\r\n-    double angle = (h * pi / 4) - pi / 2; //+ pi / 2;\r\n+    double angle = (h * pi / 6) - pi / 2; //+ pi / 2;\r\n     Offset offset =\r\n         Offset(longHandLength * cos(angle), longHandLength * sin(angle));\r\n     TextSpan span = TextSpan(style: style, text: h.toString());\r\n     TextPainter tp = TextPainter(\r\n"
+                },
+                {
+                    "date": 1643113634491,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n   double r = size.shortestSide / 2;\r\n   double longHandLength = r - (p * scaleFactor);\r\n \r\n   for (var h = 1; h <= 12; h++) {\r\n-    if (h == 4) continue;\r\n+    if (h != 4) continue;\r\n     double angle = (h * pi / 6) - pi / 2; //+ pi / 2;\r\n     Offset offset =\r\n         Offset(longHandLength * cos(angle), longHandLength * sin(angle));\r\n     TextSpan span = TextSpan(style: style, text: h.toString());\r\n"
+                },
+                {
+                    "date": 1643113646220,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n   double r = size.shortestSide / 2;\r\n   double longHandLength = r - (p * scaleFactor);\r\n \r\n   for (var h = 1; h <= 12; h++) {\r\n-    if (h != 4) continue;\r\n+    if (h != 3) continue;\r\n     double angle = (h * pi / 6) - pi / 2; //+ pi / 2;\r\n     Offset offset =\r\n         Offset(longHandLength * cos(angle), longHandLength * sin(angle));\r\n     TextSpan span = TextSpan(style: style, text: h.toString());\r\n"
+                },
+                {
+                    "date": 1643113659956,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n   double r = size.shortestSide / 2;\r\n   double longHandLength = r - (p * scaleFactor);\r\n \r\n   for (var h = 1; h <= 12; h++) {\r\n-    if (h != 3) continue;\r\n+    if (h != 3 || h != 12) continue;\r\n     double angle = (h * pi / 6) - pi / 2; //+ pi / 2;\r\n     Offset offset =\r\n         Offset(longHandLength * cos(angle), longHandLength * sin(angle));\r\n     TextSpan span = TextSpan(style: style, text: h.toString());\r\n"
+                },
+                {
+                    "date": 1643113668750,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n   double r = size.shortestSide / 2;\r\n   double longHandLength = r - (p * scaleFactor);\r\n \r\n   for (var h = 1; h <= 12; h++) {\r\n-    if (h != 3 || h != 12) continue;\r\n+    if (h != 3 && h != 12) continue;\r\n     double angle = (h * pi / 6) - pi / 2; //+ pi / 2;\r\n     Offset offset =\r\n         Offset(longHandLength * cos(angle), longHandLength * sin(angle));\r\n     TextSpan span = TextSpan(style: style, text: h.toString());\r\n"
+                },
+                {
+                    "date": 1643113689511,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n   double r = size.shortestSide / 2;\r\n   double longHandLength = r - (p * scaleFactor);\r\n \r\n   for (var h = 1; h <= 12; h++) {\r\n-    if (h != 3 && h != 12) continue;\r\n+    if (h != 3 && h != 12 && h != 6 && h != 9) continue;\r\n     double angle = (h * pi / 6) - pi / 2; //+ pi / 2;\r\n     Offset offset =\r\n         Offset(longHandLength * cos(angle), longHandLength * sin(angle));\r\n     TextSpan span = TextSpan(style: style, text: h.toString());\r\n"
+                },
+                {
+                    "date": 1643113700879,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n     Canvas canvas, Size size, double scaleFactor, bool showAllNumbers) {\r\n   TextStyle style = TextStyle(\r\n       color: Colors.black,\r\n       fontWeight: FontWeight.bold,\r\n-      fontSize: 8.0 * scaleFactor * 1.0);\r\n+      fontSize: 16 * scaleFactor * 1.0);\r\n   double p = 9.0;\r\n   // p += 24.0;\r\n \r\n   double r = size.shortestSide / 2;\r\n"
+                },
+                {
+                    "date": 1643113846546,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,11 +29,11 @@\n \r\n   double r = size.shortestSide / 2;\r\n   double longHandLength = r - (p * scaleFactor);\r\n \r\n-  for (var h = 1; h <= 12; h++) {\r\n-    if (h != 3 && h != 12 && h != 6 && h != 9) continue;\r\n-    double angle = (h * pi / 6) - pi / 2; //+ pi / 2;\r\n+  for (var h = 1; h <= 60; h++) {\r\n+    // if (!showAllNumbers && h % 3 != 80) continue;\r\n+    double angle = (h * pi / 30) - pi / 2; //+ pi / 2;\r\n     Offset offset =\r\n         Offset(longHandLength * cos(angle), longHandLength * sin(angle));\r\n     TextSpan span = TextSpan(style: style, text: h.toString());\r\n     TextPainter tp = TextPainter(\r\n"
+                },
+                {
+                    "date": 1643113898839,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,18 +22,18 @@\n     Canvas canvas, Size size, double scaleFactor, bool showAllNumbers) {\r\n   TextStyle style = TextStyle(\r\n       color: Colors.black,\r\n       fontWeight: FontWeight.bold,\r\n-      fontSize: 16 * scaleFactor * 1.0);\r\n+      fontSize: 16.0 * scaleFactor * 1.0);\r\n   double p = 9.0;\r\n   // p += 24.0;\r\n \r\n   double r = size.shortestSide / 2;\r\n   double longHandLength = r - (p * scaleFactor);\r\n \r\n   for (var h = 1; h <= 60; h++) {\r\n     // if (!showAllNumbers && h % 3 != 80) continue;\r\n-    double angle = (h * pi / 30) - pi / 2; //+ pi / 2;\r\n+    double angle = (h * pi / 60) - pi / 2; //+ pi / 2;\r\n     Offset offset =\r\n         Offset(longHandLength * cos(angle), longHandLength * sin(angle));\r\n     TextSpan span = TextSpan(style: style, text: h.toString());\r\n     TextPainter tp = TextPainter(\r\n"
                 }
             ],
             "date": 1643111608597,

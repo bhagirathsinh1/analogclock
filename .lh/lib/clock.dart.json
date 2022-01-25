@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 131,
+            "activePatchIndex": 136,
             "patches": [
                 {
                     "date": 1643014287416,
@@ -532,6 +532,26 @@
                 {
                     "date": 1643112636439,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,8 @@\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return Container(\r\n-      color: Colors.red,\r\n       width: 300,\r\n       height: 300,\r\n       child: Stack(\r\n         alignment: Alignment.center,\r\n@@ -83,9 +82,9 @@\n           Container(\r\n             // color: Colors.red,\r\n             constraints: BoxConstraints.expand(),\r\n             child: RotatedBox(\r\n-              quarterTurns: 3,\r\n+              quarterTurns: 4,\r\n               child: CustomPaint(\r\n                 painter: HourPainter(),\r\n               ),\r\n             ),\r\n"
+                },
+                {
+                    "date": 1643112790207,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -82,9 +82,9 @@\n           Container(\r\n             // color: Colors.red,\r\n             constraints: BoxConstraints.expand(),\r\n             child: RotatedBox(\r\n-              quarterTurns: 4,\r\n+              quarterTurns: 2,\r\n               child: CustomPaint(\r\n                 painter: HourPainter(),\r\n               ),\r\n             ),\r\n"
+                },
+                {
+                    "date": 1643112800767,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -82,9 +82,9 @@\n           Container(\r\n             // color: Colors.red,\r\n             constraints: BoxConstraints.expand(),\r\n             child: RotatedBox(\r\n-              quarterTurns: 2,\r\n+              quarterTurns: 4,\r\n               child: CustomPaint(\r\n                 painter: HourPainter(),\r\n               ),\r\n             ),\r\n"
+                },
+                {
+                    "date": 1643114828978,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,9 @@\n import 'dart:async';\r\n import 'dart:math';\r\n \r\n import 'package:analogclock/clock_painter.dart';\r\n+import 'package:analogclock/dash_painter.dart';\r\n import 'package:analogclock/hour_painter.dart';\r\n import 'package:flutter/material.dart';\r\n import 'package:flutter/widgets.dart';\r\n \r\n@@ -88,8 +89,18 @@\n                 painter: HourPainter(),\r\n               ),\r\n             ),\r\n           ),\r\n+          Container(\r\n+            // color: Colors.red,\r\n+            constraints: BoxConstraints.expand(),\r\n+            child: RotatedBox(\r\n+              quarterTurns: 4,\r\n+              child: CustomPaint(\r\n+                painter: DashPainter(),\r\n+              ),\r\n+            ),\r\n+          ),\r\n           Transform.rotate(\r\n             angle: -pi / 2,\r\n             child: Container(\r\n               // color: Colors.red,\r\n"
+                },
+                {
+                    "date": 1643114858626,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -85,18 +85,8 @@\n             constraints: BoxConstraints.expand(),\r\n             child: RotatedBox(\r\n               quarterTurns: 4,\r\n               child: CustomPaint(\r\n-                painter: HourPainter(),\r\n-              ),\r\n-            ),\r\n-          ),\r\n-          Container(\r\n-            // color: Colors.red,\r\n-            constraints: BoxConstraints.expand(),\r\n-            child: RotatedBox(\r\n-              quarterTurns: 4,\r\n-              child: CustomPaint(\r\n                 painter: DashPainter(),\r\n               ),\r\n             ),\r\n           ),\r\n@@ -109,8 +99,18 @@\n                 painter: ClockPainter(),\r\n               ),\r\n             ),\r\n           ),\r\n+          Container(\r\n+            // color: Colors.red,\r\n+            constraints: BoxConstraints.expand(),\r\n+            child: RotatedBox(\r\n+              quarterTurns: 4,\r\n+              child: CustomPaint(\r\n+                painter: HourPainter(),\r\n+              ),\r\n+            ),\r\n+          ),\r\n         ],\r\n       ),\r\n     );\r\n   }\r\n"
+                },
+                {
+                    "date": 1643114875864,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -79,18 +79,8 @@\n                 ),\r\n               ],\r\n             ),\r\n           ),\r\n-          Container(\r\n-            // color: Colors.red,\r\n-            constraints: BoxConstraints.expand(),\r\n-            child: RotatedBox(\r\n-              quarterTurns: 4,\r\n-              child: CustomPaint(\r\n-                painter: DashPainter(),\r\n-              ),\r\n-            ),\r\n-          ),\r\n           Transform.rotate(\r\n             angle: -pi / 2,\r\n             child: Container(\r\n               // color: Colors.red,\r\n@@ -105,8 +95,18 @@\n             constraints: BoxConstraints.expand(),\r\n             child: RotatedBox(\r\n               quarterTurns: 4,\r\n               child: CustomPaint(\r\n+                painter: DashPainter(),\r\n+              ),\r\n+            ),\r\n+          ),\r\n+          Container(\r\n+            // color: Colors.red,\r\n+            constraints: BoxConstraints.expand(),\r\n+            child: RotatedBox(\r\n+              quarterTurns: 4,\r\n+              child: CustomPaint(\r\n                 painter: HourPainter(),\r\n               ),\r\n             ),\r\n           ),\r\n"
                 }
             ],
             "date": 1643014287416,

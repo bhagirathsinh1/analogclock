@@ -4,6 +4,7 @@ import 'dart:async';
 import 'dart:math';
 
 import 'package:analogclock/clock_painter.dart';
+import 'package:analogclock/dash_painter.dart';
 import 'package:analogclock/hour_painter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -79,16 +80,6 @@ class _ClockState extends State<Clock> {
               ],
             ),
           ),
-          Container(
-            // color: Colors.red,
-            constraints: BoxConstraints.expand(),
-            child: RotatedBox(
-              quarterTurns: 4,
-              child: CustomPaint(
-                painter: HourPainter(),
-              ),
-            ),
-          ),
           Transform.rotate(
             angle: -pi / 2,
             child: Container(
@@ -96,6 +87,26 @@ class _ClockState extends State<Clock> {
               constraints: BoxConstraints.expand(),
               child: CustomPaint(
                 painter: ClockPainter(),
+              ),
+            ),
+          ),
+          Container(
+            // color: Colors.red,
+            constraints: BoxConstraints.expand(),
+            child: RotatedBox(
+              quarterTurns: 4,
+              child: CustomPaint(
+                painter: DashPainter(),
+              ),
+            ),
+          ),
+          Container(
+            // color: Colors.red,
+            constraints: BoxConstraints.expand(),
+            child: RotatedBox(
+              quarterTurns: 4,
+              child: CustomPaint(
+                painter: HourPainter(),
               ),
             ),
           ),

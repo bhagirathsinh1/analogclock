@@ -9,8 +9,7 @@ class HourPainter extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     const double BASE_SIZE = 320.0;
     bool showAllNumbers = true;
-    double scaleFactor = size.shortestSide / BASE_SIZE;
-
+    double scaleFactor = size.shortestSide / 320.0;
     _drawIndicators(canvas, size, scaleFactor, showAllNumbers);
   }
 
