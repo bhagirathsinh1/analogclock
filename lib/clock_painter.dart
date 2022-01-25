@@ -7,9 +7,6 @@ import 'package:flutter/material.dart';
 class ClockPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
-    const double BASE_SIZE = 320.0;
-    bool showAllNumbers = true;
-    double scaleFactor = size.shortestSide / BASE_SIZE;
     double centerX = size.width / 2;
     double centerY = size.height / 2;
     double radius = min(centerX, centerY);
@@ -17,7 +14,7 @@ class ClockPainter extends CustomPainter {
     double outerRadius = radius - 20;
     double innerRdaius = radius - 30;
     DateTime dateTime = DateTime.now();
-    _drawIndicators(canvas, size, scaleFactor, showAllNumbers);
+    // _drawIndicators(canvas, size, scaleFactor, showAllNumbers);
 
     //dashLine for second
     Paint secDashPaint = Paint()
@@ -94,31 +91,4 @@ class ClockPainter extends CustomPainter {
   }
 }
 
-void _drawIndicators(
-    Canvas canvas, Size size, double scaleFactor, bool showAllNumbers) {
-  TextStyle style = TextStyle(
-      color: Colors.black,
-      fontWeight: FontWeight.bold,
-      fontSize: 16.0 * scaleFactor * 1.0);
-  double p = 8.0;
-  // p += 24.0;
-
-  double r = size.shortestSide / 2;
-  double longHandLength = r - (p * scaleFactor);
-
-  for (var h = 1; h <= 12; h++) {
-    // if (!showAllNumbers && h % 3 != 80) continue;
-    double angle = (h * pi / 6); //+ pi / 2;
-    Offset offset =
-        Offset(longHandLength * cos(angle), longHandLength * sin(angle));
-    TextSpan span = TextSpan(style: style, text: h.toString());
-    TextPainter tp = TextPainter(
-      text: span,
-      // textAlign: TextAlign.center,
-      textDirection: TextDirection.rtl,
-    );
-    tp.layout();
-
-    tp.paint(canvas, size.center(offset - tp.size.center(Offset.zero)));
-  }
-}
+// 

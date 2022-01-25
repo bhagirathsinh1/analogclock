@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 105,
+            "activePatchIndex": 131,
             "patches": [
                 {
                     "date": 1643014287416,
@@ -428,6 +428,110 @@
                 {
                     "date": 1643111318790,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -79,15 +79,12 @@\n             ),\r\n           ),\r\n           Transform.rotate(\r\n             angle: -pi / 2,\r\n-            child: RotatedBox(\r\n-              quarterTurns: 2,\r\n-              child: Container(\r\n-                constraints: BoxConstraints.expand(),\r\n-                child: CustomPaint(\r\n-                  painter: ClockPainter(),\r\n-                ),\r\n+            child: Container(\r\n+              constraints: BoxConstraints.expand(),\r\n+              child: CustomPaint(\r\n+                painter: ClockPainter(),\r\n               ),\r\n             ),\r\n           )\r\n         ],\r\n"
+                },
+                {
+                    "date": 1643111393895,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -77,15 +77,12 @@\n                 ),\r\n               ],\r\n             ),\r\n           ),\r\n-          Transform.rotate(\r\n-            angle: -pi / 2,\r\n-            child: Container(\r\n-              constraints: BoxConstraints.expand(),\r\n-              child: CustomPaint(\r\n-                painter: ClockPainter(),\r\n-              ),\r\n+          Container(\r\n+            constraints: BoxConstraints.expand(),\r\n+            child: CustomPaint(\r\n+              painter: ClockPainter(),\r\n             ),\r\n           )\r\n         ],\r\n       ),\r\n"
+                },
+                {
+                    "date": 1643111421259,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -79,10 +79,13 @@\n             ),\r\n           ),\r\n           Container(\r\n             constraints: BoxConstraints.expand(),\r\n-            child: CustomPaint(\r\n-              painter: ClockPainter(),\r\n+            child: RotatedBox(\r\n+              quarterTurns: 2,\r\n+              child: CustomPaint(\r\n+                painter: ClockPainter(),\r\n+              ),\r\n             ),\r\n           )\r\n         ],\r\n       ),\r\n"
+                },
+                {
+                    "date": 1643111430993,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -80,9 +80,9 @@\n           ),\r\n           Container(\r\n             constraints: BoxConstraints.expand(),\r\n             child: RotatedBox(\r\n-              quarterTurns: 2,\r\n+              quarterTurns: 3,\r\n               child: CustomPaint(\r\n                 painter: ClockPainter(),\r\n               ),\r\n             ),\r\n"
+                },
+                {
+                    "date": 1643111446367,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -79,13 +79,10 @@\n             ),\r\n           ),\r\n           Container(\r\n             constraints: BoxConstraints.expand(),\r\n-            child: RotatedBox(\r\n-              quarterTurns: 3,\r\n-              child: CustomPaint(\r\n-                painter: ClockPainter(),\r\n-              ),\r\n+            child: CustomPaint(\r\n+              painter: ClockPainter(),\r\n             ),\r\n           )\r\n         ],\r\n       ),\r\n"
+                },
+                {
+                    "date": 1643111455532,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -77,12 +77,15 @@\n                 ),\r\n               ],\r\n             ),\r\n           ),\r\n-          Container(\r\n-            constraints: BoxConstraints.expand(),\r\n-            child: CustomPaint(\r\n-              painter: ClockPainter(),\r\n+          Transform.rotate(\r\n+            angle: -pi / 2,\r\n+            child: Container(\r\n+              constraints: BoxConstraints.expand(),\r\n+              child: CustomPaint(\r\n+                painter: ClockPainter(),\r\n+              ),\r\n             ),\r\n           )\r\n         ],\r\n       ),\r\n"
+                },
+                {
+                    "date": 1643111481019,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -80,8 +80,9 @@\n           ),\r\n           Transform.rotate(\r\n             angle: -pi / 2,\r\n             child: Container(\r\n+              color: Colors.red,\r\n               constraints: BoxConstraints.expand(),\r\n               child: CustomPaint(\r\n                 painter: ClockPainter(),\r\n               ),\r\n"
+                },
+                {
+                    "date": 1643111547420,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -82,11 +82,13 @@\n             angle: -pi / 2,\r\n             child: Container(\r\n               color: Colors.red,\r\n               constraints: BoxConstraints.expand(),\r\n-              child: CustomPaint(\r\n-                painter: ClockPainter(),\r\n-              ),\r\n+              child: Stack(children: [\r\n+                CustomPaint(\r\n+                  painter: ClockPainter(),\r\n+                ),\r\n+              ]),\r\n             ),\r\n           )\r\n         ],\r\n       ),\r\n"
+                },
+                {
+                    "date": 1643111695730,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,9 @@\n import 'dart:async';\r\n import 'dart:math';\r\n \r\n import 'package:analogclock/clock_painter.dart';\r\n+import 'package:analogclock/hour_painter.dart';\r\n import 'package:flutter/material.dart';\r\n import 'package:flutter/widgets.dart';\r\n \r\n class Clock extends StatefulWidget {\r\n@@ -84,8 +85,11 @@\n               color: Colors.red,\r\n               constraints: BoxConstraints.expand(),\r\n               child: Stack(children: [\r\n                 CustomPaint(\r\n+                  painter: HourPainter(),\r\n+                ),\r\n+                CustomPaint(\r\n                   painter: ClockPainter(),\r\n                 ),\r\n               ]),\r\n             ),\r\n"
+                },
+                {
+                    "date": 1643111897959,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -84,12 +84,12 @@\n             child: Container(\r\n               color: Colors.red,\r\n               constraints: BoxConstraints.expand(),\r\n               child: Stack(children: [\r\n+                // CustomPaint(\r\n+                //   painter: HourPainter(),\r\n+                // ),\r\n                 CustomPaint(\r\n-                  painter: HourPainter(),\r\n-                ),\r\n-                CustomPaint(\r\n                   painter: ClockPainter(),\r\n                 ),\r\n               ]),\r\n             ),\r\n"
+                },
+                {
+                    "date": 1643112010280,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -83,9 +83,9 @@\n             angle: -pi / 2,\r\n             child: Container(\r\n               color: Colors.red,\r\n               constraints: BoxConstraints.expand(),\r\n-              child: Stack(children: [\r\n+              child: Column(children: [\r\n                 // CustomPaint(\r\n                 //   painter: HourPainter(),\r\n                 // ),\r\n                 CustomPaint(\r\n"
+                },
+                {
+                    "date": 1643112039223,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -83,16 +83,11 @@\n             angle: -pi / 2,\r\n             child: Container(\r\n               color: Colors.red,\r\n               constraints: BoxConstraints.expand(),\r\n-              child: Column(children: [\r\n-                // CustomPaint(\r\n-                //   painter: HourPainter(),\r\n-                // ),\r\n-                CustomPaint(\r\n-                  painter: ClockPainter(),\r\n-                ),\r\n-              ]),\r\n+              child: CustomPaint(\r\n+                painter: ClockPainter(),\r\n+              ),\r\n             ),\r\n           )\r\n         ],\r\n       ),\r\n"
+                },
+                {
+                    "date": 1643112107651,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -87,9 +87,19 @@\n               child: CustomPaint(\r\n                 painter: ClockPainter(),\r\n               ),\r\n             ),\r\n-          )\r\n+          ),\r\n+          Transform.rotate(\r\n+            angle: -pi / 2,\r\n+            child: Container(\r\n+              color: Colors.red,\r\n+              constraints: BoxConstraints.expand(),\r\n+              child: CustomPaint(\r\n+                painter: HourPainter(),\r\n+              ),\r\n+            ),\r\n+          ),\r\n         ],\r\n       ),\r\n     );\r\n   }\r\n"
+                },
+                {
+                    "date": 1643112124249,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -89,9 +89,9 @@\n               ),\r\n             ),\r\n           ),\r\n           Transform.rotate(\r\n-            angle: -pi / 2,\r\n+            angle: pi / 2,\r\n             child: Container(\r\n               color: Colors.red,\r\n               constraints: BoxConstraints.expand(),\r\n               child: CustomPaint(\r\n"
+                },
+                {
+                    "date": 1643112129718,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -89,9 +89,9 @@\n               ),\r\n             ),\r\n           ),\r\n           Transform.rotate(\r\n-            angle: pi / 2,\r\n+            angle: pi,\r\n             child: Container(\r\n               color: Colors.red,\r\n               constraints: BoxConstraints.expand(),\r\n               child: CustomPaint(\r\n"
+                },
+                {
+                    "date": 1643112203081,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -88,18 +88,8 @@\n                 painter: ClockPainter(),\r\n               ),\r\n             ),\r\n           ),\r\n-          Transform.rotate(\r\n-            angle: pi,\r\n-            child: Container(\r\n-              color: Colors.red,\r\n-              constraints: BoxConstraints.expand(),\r\n-              child: CustomPaint(\r\n-                painter: HourPainter(),\r\n-              ),\r\n-            ),\r\n-          ),\r\n         ],\r\n       ),\r\n     );\r\n   }\r\n"
+                },
+                {
+                    "date": 1643112267992,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -81,9 +81,9 @@\n           ),\r\n           Transform.rotate(\r\n             angle: -pi / 2,\r\n             child: Container(\r\n-              color: Colors.red,\r\n+              // color: Colors.red,\r\n               constraints: BoxConstraints.expand(),\r\n               child: CustomPaint(\r\n                 painter: ClockPainter(),\r\n               ),\r\n"
+                },
+                {
+                    "date": 1643112282035,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,8 +26,9 @@\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return Container(\r\n+      color: Colors.red,\r\n       width: 300,\r\n       height: 300,\r\n       child: Stack(\r\n         alignment: Alignment.center,\r\n"
+                },
+                {
+                    "date": 1643112326803,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,8 +32,18 @@\n       height: 300,\r\n       child: Stack(\r\n         alignment: Alignment.center,\r\n         children: [\r\n+          Transform.rotate(\r\n+            angle: -pi / 2,\r\n+            child: Container(\r\n+              // color: Colors.red,\r\n+              constraints: BoxConstraints.expand(),\r\n+              child: CustomPaint(\r\n+                painter: ClockPainter(),\r\n+              ),\r\n+            ),\r\n+          ),\r\n           Container(\r\n             constraints: BoxConstraints.expand(),\r\n             decoration: BoxDecoration(\r\n               shape: BoxShape.circle,\r\n"
+                },
+                {
+                    "date": 1643112343847,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,9 +38,9 @@\n             child: Container(\r\n               // color: Colors.red,\r\n               constraints: BoxConstraints.expand(),\r\n               child: CustomPaint(\r\n-                painter: ClockPainter(),\r\n+                painter: HourPainter(),\r\n               ),\r\n             ),\r\n           ),\r\n           Container(\r\n"
+                },
+                {
+                    "date": 1643112366336,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,18 +32,8 @@\n       height: 300,\r\n       child: Stack(\r\n         alignment: Alignment.center,\r\n         children: [\r\n-          Transform.rotate(\r\n-            angle: -pi / 2,\r\n-            child: Container(\r\n-              // color: Colors.red,\r\n-              constraints: BoxConstraints.expand(),\r\n-              child: CustomPaint(\r\n-                painter: HourPainter(),\r\n-              ),\r\n-            ),\r\n-          ),\r\n           Container(\r\n             constraints: BoxConstraints.expand(),\r\n             decoration: BoxDecoration(\r\n               shape: BoxShape.circle,\r\n@@ -95,8 +85,18 @@\n             child: Container(\r\n               // color: Colors.red,\r\n               constraints: BoxConstraints.expand(),\r\n               child: CustomPaint(\r\n+                painter: HourPainter(),\r\n+              ),\r\n+            ),\r\n+          ),\r\n+          Transform.rotate(\r\n+            angle: -pi / 2,\r\n+            child: Container(\r\n+              // color: Colors.red,\r\n+              constraints: BoxConstraints.expand(),\r\n+              child: CustomPaint(\r\n                 painter: ClockPainter(),\r\n               ),\r\n             ),\r\n           ),\r\n"
+                },
+                {
+                    "date": 1643112375289,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -80,9 +80,9 @@\n               ],\r\n             ),\r\n           ),\r\n           Transform.rotate(\r\n-            angle: -pi / 2,\r\n+            angle: pi / 2,\r\n             child: Container(\r\n               // color: Colors.red,\r\n               constraints: BoxConstraints.expand(),\r\n               child: CustomPaint(\r\n"
+                },
+                {
+                    "date": 1643112381650,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -80,9 +80,9 @@\n               ],\r\n             ),\r\n           ),\r\n           Transform.rotate(\r\n-            angle: pi / 2,\r\n+            angle: pi,\r\n             child: Container(\r\n               // color: Colors.red,\r\n               constraints: BoxConstraints.expand(),\r\n               child: CustomPaint(\r\n"
+                },
+                {
+                    "date": 1643112390874,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -79,16 +79,13 @@\n                 ),\r\n               ],\r\n             ),\r\n           ),\r\n-          Transform.rotate(\r\n-            angle: pi,\r\n-            child: Container(\r\n-              // color: Colors.red,\r\n-              constraints: BoxConstraints.expand(),\r\n-              child: CustomPaint(\r\n-                painter: HourPainter(),\r\n-              ),\r\n+          Container(\r\n+            // color: Colors.red,\r\n+            constraints: BoxConstraints.expand(),\r\n+            child: CustomPaint(\r\n+              painter: HourPainter(),\r\n             ),\r\n           ),\r\n           Transform.rotate(\r\n             angle: -pi / 2,\r\n"
+                },
+                {
+                    "date": 1643112413613,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -82,10 +82,13 @@\n           ),\r\n           Container(\r\n             // color: Colors.red,\r\n             constraints: BoxConstraints.expand(),\r\n-            child: CustomPaint(\r\n-              painter: HourPainter(),\r\n+            child: RotatedBox(\r\n+              quarterTurns: 1,\r\n+              child: CustomPaint(\r\n+                painter: HourPainter(),\r\n+              ),\r\n             ),\r\n           ),\r\n           Transform.rotate(\r\n             angle: -pi / 2,\r\n"
+                },
+                {
+                    "date": 1643112422391,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -83,9 +83,9 @@\n           Container(\r\n             // color: Colors.red,\r\n             constraints: BoxConstraints.expand(),\r\n             child: RotatedBox(\r\n-              quarterTurns: 1,\r\n+              quarterTurns: 3,\r\n               child: CustomPaint(\r\n                 painter: HourPainter(),\r\n               ),\r\n             ),\r\n"
+                },
+                {
+                    "date": 1643112636439,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,8 @@\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return Container(\r\n-      color: Colors.red,\r\n       width: 300,\r\n       height: 300,\r\n       child: Stack(\r\n         alignment: Alignment.center,\r\n@@ -83,9 +82,9 @@\n           Container(\r\n             // color: Colors.red,\r\n             constraints: BoxConstraints.expand(),\r\n             child: RotatedBox(\r\n-              quarterTurns: 3,\r\n+              quarterTurns: 4,\r\n               child: CustomPaint(\r\n                 painter: HourPainter(),\r\n               ),\r\n             ),\r\n"
                 }
             ],
             "date": 1643014287416,
