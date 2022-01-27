@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 225,
+            "activePatchIndex": 231,
             "patches": [
                 {
                     "date": 1643022982541,
@@ -908,6 +908,30 @@
                 {
                     "date": 1643115839549,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,6 @@\n // ignore_for_file: prefer_const_constructors\r\n-\r\n import 'dart:math';\r\n-\r\n import 'package:flutter/material.dart';\r\n \r\n class ClockPainter extends CustomPainter {\r\n   @override\r\n"
+                },
+                {
+                    "date": 1643265891130,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,9 @@\n     canvas.drawLine(center, Offset(minHandX, minHandY), minHandBrush);\r\n \r\n //hour hand paint\r\n     var hourHandBrush = Paint()\r\n-      ..color = Colors.black\r\n+      ..color = Colors.blueGrey\r\n       ..strokeWidth = 6\r\n       ..strokeCap = StrokeCap.round\r\n       ..style = PaintingStyle.stroke;\r\n     var hourHandX = centerX +\r\n"
+                },
+                {
+                    "date": 1643265901484,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,9 @@\n     canvas.drawLine(center, Offset(minHandX, minHandY), minHandBrush);\r\n \r\n //hour hand paint\r\n     var hourHandBrush = Paint()\r\n-      ..color = Colors.blueGrey\r\n+      ..color = Colors.black87\r\n       ..strokeWidth = 6\r\n       ..strokeCap = StrokeCap.round\r\n       ..style = PaintingStyle.stroke;\r\n     var hourHandX = centerX +\r\n"
+                },
+                {
+                    "date": 1643265910504,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,9 @@\n     canvas.drawLine(center, Offset(minHandX, minHandY), minHandBrush);\r\n \r\n //hour hand paint\r\n     var hourHandBrush = Paint()\r\n-      ..color = Colors.black87\r\n+      ..color = Colors.black45\r\n       ..strokeWidth = 6\r\n       ..strokeCap = StrokeCap.round\r\n       ..style = PaintingStyle.stroke;\r\n     var hourHandX = centerX +\r\n"
+                },
+                {
+                    "date": 1643265925493,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,9 @@\n     canvas.drawLine(center, Offset(minHandX, minHandY), minHandBrush);\r\n \r\n //hour hand paint\r\n     var hourHandBrush = Paint()\r\n-      ..color = Colors.black45\r\n+      ..color = Colors.grey\r\n       ..strokeWidth = 6\r\n       ..strokeCap = StrokeCap.round\r\n       ..style = PaintingStyle.stroke;\r\n     var hourHandX = centerX +\r\n"
+                },
+                {
+                    "date": 1643265956482,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,9 @@\n     canvas.drawLine(center, Offset(minHandX, minHandY), minHandBrush);\r\n \r\n //hour hand paint\r\n     var hourHandBrush = Paint()\r\n-      ..color = Colors.grey\r\n+      ..color = Colors.black87\r\n       ..strokeWidth = 6\r\n       ..strokeCap = StrokeCap.round\r\n       ..style = PaintingStyle.stroke;\r\n     var hourHandX = centerX +\r\n"
+                },
+                {
+                    "date": 1643266007677,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,9 @@\n     canvas.drawLine(center, Offset(minHandX, minHandY), minHandBrush);\r\n \r\n //hour hand paint\r\n     var hourHandBrush = Paint()\r\n-      ..color = Colors.black87\r\n+      ..color = Colors.blueGrey\r\n       ..strokeWidth = 6\r\n       ..strokeCap = StrokeCap.round\r\n       ..style = PaintingStyle.stroke;\r\n     var hourHandX = centerX +\r\n"
                 }
             ],
             "date": 1643022982541,

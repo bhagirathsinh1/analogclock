@@ -35,7 +35,7 @@ class ClockPainter extends CustomPainter {
 
 //hour hand paint
     var hourHandBrush = Paint()
-      ..color = Colors.black
+      ..color = Colors.blueGrey
       ..strokeWidth = 6
       ..strokeCap = StrokeCap.round
       ..style = PaintingStyle.stroke;

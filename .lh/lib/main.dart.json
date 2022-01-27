@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 6,
+            "activePatchIndex": 10,
             "patches": [
                 {
                     "date": 1643008284645,
@@ -32,6 +32,22 @@
                 {
                     "date": 1643014300395,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,7 @@\n // ignore_for_file: prefer_const_constructors\r\n \r\n+import 'package:analogclock/clock.dart';\r\n import 'package:flutter/material.dart';\r\n \r\n void main() {\r\n   runApp(const MyApp());\r\n@@ -13,8 +14,8 @@\n   Widget build(BuildContext context) {\r\n     return MaterialApp(\r\n       theme: ThemeData(scaffoldBackgroundColor: Color(0xFFEBF3FE)),\r\n       debugShowCheckedModeBanner: false,\r\n-      home: Scaffold(body: Center(child: Text('hello'))),\r\n+      home: Scaffold(body: Center(child: Clock())),\r\n     );\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1643261208738,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return MaterialApp(\r\n-      theme: ThemeData(scaffoldBackgroundColor: Color(0xFFEBF3FE)),\r\n+      theme: ThemeData(scaffoldBackgroundColor: Colors.black),\r\n       debugShowCheckedModeBanner: false,\r\n       home: Scaffold(body: Center(child: Clock())),\r\n     );\r\n   }\r\n"
+                },
+                {
+                    "date": 1643261265973,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return MaterialApp(\r\n-      theme: ThemeData(scaffoldBackgroundColor: Colors.black),\r\n+      // theme: ThemeData(scaffoldBackgroundColor: Colors.black),\r\n       debugShowCheckedModeBanner: false,\r\n       home: Scaffold(body: Center(child: Clock())),\r\n     );\r\n   }\r\n"
+                },
+                {
+                    "date": 1643263538152,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,15 +1,20 @@\n // ignore_for_file: prefer_const_constructors\r\n \r\n import 'package:analogclock/clock.dart';\r\n import 'package:flutter/material.dart';\r\n+import 'package:flutter/scheduler.dart';\r\n \r\n void main() {\r\n-  runApp(const MyApp());\r\n+  runApp(MyApp());\r\n }\r\n \r\n class MyApp extends StatelessWidget {\r\n-  const MyApp({Key? key}) : super(key: key);\r\n+  var platformBrightness =\r\n+      SchedulerBinding.instance!.window.platformBrightness == Brightness.dark\r\n+          ? true\r\n+          : false;\r\n+  MyApp({Key? key}) : super(key: key);\r\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return MaterialApp(\r\n"
+                },
+                {
+                    "date": 1643263641917,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,20 +1,15 @@\n // ignore_for_file: prefer_const_constructors\r\n \r\n import 'package:analogclock/clock.dart';\r\n import 'package:flutter/material.dart';\r\n-import 'package:flutter/scheduler.dart';\r\n \r\n void main() {\r\n-  runApp(MyApp());\r\n+  runApp(const MyApp());\r\n }\r\n \r\n class MyApp extends StatelessWidget {\r\n-  var platformBrightness =\r\n-      SchedulerBinding.instance!.window.platformBrightness == Brightness.dark\r\n-          ? true\r\n-          : false;\r\n-  MyApp({Key? key}) : super(key: key);\r\n+  const MyApp({Key? key}) : super(key: key);\r\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return MaterialApp(\r\n"
                 }
             ],
             "date": 1643008284645,

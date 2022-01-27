@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 57,
+            "activePatchIndex": 69,
             "patches": [
                 {
                     "date": 1643111608597,
@@ -236,6 +236,54 @@
                 {
                     "date": 1643113898839,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,18 +22,18 @@\n     Canvas canvas, Size size, double scaleFactor, bool showAllNumbers) {\r\n   TextStyle style = TextStyle(\r\n       color: Colors.black,\r\n       fontWeight: FontWeight.bold,\r\n-      fontSize: 16 * scaleFactor * 1.0);\r\n+      fontSize: 16.0 * scaleFactor * 1.0);\r\n   double p = 9.0;\r\n   // p += 24.0;\r\n \r\n   double r = size.shortestSide / 2;\r\n   double longHandLength = r - (p * scaleFactor);\r\n \r\n   for (var h = 1; h <= 60; h++) {\r\n     // if (!showAllNumbers && h % 3 != 80) continue;\r\n-    double angle = (h * pi / 30) - pi / 2; //+ pi / 2;\r\n+    double angle = (h * pi / 60) - pi / 2; //+ pi / 2;\r\n     Offset offset =\r\n         Offset(longHandLength * cos(angle), longHandLength * sin(angle));\r\n     TextSpan span = TextSpan(style: style, text: h.toString());\r\n     TextPainter tp = TextPainter(\r\n"
+                },
+                {
+                    "date": 1643265582902,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,8 +6,9 @@\n \r\n class HourPainter extends CustomPainter {\r\n   @override\r\n   void paint(Canvas canvas, Size size) {\r\n+    const double BASE_SIZE = 320.0;\r\n     bool showAllNumbers = true;\r\n     double scaleFactor = size.shortestSide / 320.0;\r\n     _drawIndicators(canvas, size, scaleFactor, showAllNumbers);\r\n   }\r\n@@ -20,20 +21,20 @@\n \r\n void _drawIndicators(\r\n     Canvas canvas, Size size, double scaleFactor, bool showAllNumbers) {\r\n   TextStyle style = TextStyle(\r\n-      color: Colors.black,\r\n+      color: Colors.blueGrey,\r\n       fontWeight: FontWeight.bold,\r\n       fontSize: 16.0 * scaleFactor * 1.0);\r\n   double p = 9.0;\r\n   // p += 24.0;\r\n \r\n   double r = size.shortestSide / 2;\r\n   double longHandLength = r - (p * scaleFactor);\r\n \r\n-  for (var h = 1; h <= 60; h++) {\r\n+  for (var h = 1; h <= 12; h++) {\r\n     // if (!showAllNumbers && h % 3 != 80) continue;\r\n-    double angle = (h * pi / 60) - pi / 2; //+ pi / 2;\r\n+    double angle = (h * pi / 6) - pi / 2; //+ pi / 2;\r\n     Offset offset =\r\n         Offset(longHandLength * cos(angle), longHandLength * sin(angle));\r\n     TextSpan span = TextSpan(style: style, text: h.toString());\r\n     TextPainter tp = TextPainter(\r\n"
+                },
+                {
+                    "date": 1643265599490,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n \r\n void _drawIndicators(\r\n     Canvas canvas, Size size, double scaleFactor, bool showAllNumbers) {\r\n   TextStyle style = TextStyle(\r\n-      color: Colors.blueGrey,\r\n+      color: Colors.blueGrey[900],\r\n       fontWeight: FontWeight.bold,\r\n       fontSize: 16.0 * scaleFactor * 1.0);\r\n   double p = 9.0;\r\n   // p += 24.0;\r\n"
+                },
+                {
+                    "date": 1643265607774,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n \r\n void _drawIndicators(\r\n     Canvas canvas, Size size, double scaleFactor, bool showAllNumbers) {\r\n   TextStyle style = TextStyle(\r\n-      color: Colors.blueGrey[900],\r\n+      color: Colors.blueGrey[800],\r\n       fontWeight: FontWeight.bold,\r\n       fontSize: 16.0 * scaleFactor * 1.0);\r\n   double p = 9.0;\r\n   // p += 24.0;\r\n"
+                },
+                {
+                    "date": 1643265621326,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n \r\n void _drawIndicators(\r\n     Canvas canvas, Size size, double scaleFactor, bool showAllNumbers) {\r\n   TextStyle style = TextStyle(\r\n-      color: Colors.blueGrey[800],\r\n+      color: Colors.blueGrey[600],\r\n       fontWeight: FontWeight.bold,\r\n       fontSize: 16.0 * scaleFactor * 1.0);\r\n   double p = 9.0;\r\n   // p += 24.0;\r\n"
+                },
+                {
+                    "date": 1643265732589,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n \r\n void _drawIndicators(\r\n     Canvas canvas, Size size, double scaleFactor, bool showAllNumbers) {\r\n   TextStyle style = TextStyle(\r\n-      color: Colors.blueGrey[600],\r\n+      color: Colors.blueGrey,\r\n       fontWeight: FontWeight.bold,\r\n       fontSize: 16.0 * scaleFactor * 1.0);\r\n   double p = 9.0;\r\n   // p += 24.0;\r\n"
+                },
+                {
+                    "date": 1643266116042,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n     Canvas canvas, Size size, double scaleFactor, bool showAllNumbers) {\r\n   TextStyle style = TextStyle(\r\n       color: Colors.blueGrey,\r\n       fontWeight: FontWeight.bold,\r\n-      fontSize: 16.0 * scaleFactor * 1.0);\r\n+      fontSize: 12.0 * scaleFactor * 1.0);\r\n   double p = 9.0;\r\n   // p += 24.0;\r\n \r\n   double r = size.shortestSide / 2;\r\n"
+                },
+                {
+                    "date": 1643266431013,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n     Canvas canvas, Size size, double scaleFactor, bool showAllNumbers) {\r\n   TextStyle style = TextStyle(\r\n       color: Colors.blueGrey,\r\n       fontWeight: FontWeight.bold,\r\n-      fontSize: 12.0 * scaleFactor * 1.0);\r\n+      fontSize: 14.0 * scaleFactor * 1.0);\r\n   double p = 9.0;\r\n   // p += 24.0;\r\n \r\n   double r = size.shortestSide / 2;\r\n"
+                },
+                {
+                    "date": 1643266446040,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n   @override\r\n   void paint(Canvas canvas, Size size) {\r\n     const double BASE_SIZE = 320.0;\r\n     bool showAllNumbers = true;\r\n-    double scaleFactor = size.shortestSide / 320.0;\r\n+    double scaleFactor = size.shortestSide / 300.0;\r\n     _drawIndicators(canvas, size, scaleFactor, showAllNumbers);\r\n   }\r\n \r\n   @override\r\n"
+                },
+                {
+                    "date": 1643266453309,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n   @override\r\n   void paint(Canvas canvas, Size size) {\r\n     const double BASE_SIZE = 320.0;\r\n     bool showAllNumbers = true;\r\n-    double scaleFactor = size.shortestSide / 300.0;\r\n+    double scaleFactor = size.shortestSide;\r\n     _drawIndicators(canvas, size, scaleFactor, showAllNumbers);\r\n   }\r\n \r\n   @override\r\n"
+                },
+                {
+                    "date": 1643266459341,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n   @override\r\n   void paint(Canvas canvas, Size size) {\r\n     const double BASE_SIZE = 320.0;\r\n     bool showAllNumbers = true;\r\n-    double scaleFactor = size.shortestSide;\r\n+    double scaleFactor = size.shortestSide / 320.0;\r\n     _drawIndicators(canvas, size, scaleFactor, showAllNumbers);\r\n   }\r\n \r\n   @override\r\n"
+                },
+                {
+                    "date": 1643266478075,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,8 @@\n \r\n class HourPainter extends CustomPainter {\r\n   @override\r\n   void paint(Canvas canvas, Size size) {\r\n-    const double BASE_SIZE = 320.0;\r\n     bool showAllNumbers = true;\r\n     double scaleFactor = size.shortestSide / 320.0;\r\n     _drawIndicators(canvas, size, scaleFactor, showAllNumbers);\r\n   }\r\n@@ -34,9 +33,9 @@\n   for (var h = 1; h <= 12; h++) {\r\n     // if (!showAllNumbers && h % 3 != 80) continue;\r\n     double angle = (h * pi / 6) - pi / 2; //+ pi / 2;\r\n     Offset offset =\r\n-        Offset(longHandLength * cos(angle), longHandLength * sin(angle));\r\n+        Offset(longHandLength * 0.90 * cos(angle), longHandLength * sin(angle));\r\n     TextSpan span = TextSpan(style: style, text: h.toString());\r\n     TextPainter tp = TextPainter(\r\n       text: span,\r\n       // textAlign: TextAlign.center,\r\n"
+                },
+                {
+                    "date": 1643266494773,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n     Canvas canvas, Size size, double scaleFactor, bool showAllNumbers) {\r\n   TextStyle style = TextStyle(\r\n       color: Colors.blueGrey,\r\n       fontWeight: FontWeight.bold,\r\n-      fontSize: 14.0 * scaleFactor * 1.0);\r\n+      fontSize: 16.0 * scaleFactor * 1.0);\r\n   double p = 9.0;\r\n   // p += 24.0;\r\n \r\n   double r = size.shortestSide / 2;\r\n@@ -33,9 +33,9 @@\n   for (var h = 1; h <= 12; h++) {\r\n     // if (!showAllNumbers && h % 3 != 80) continue;\r\n     double angle = (h * pi / 6) - pi / 2; //+ pi / 2;\r\n     Offset offset =\r\n-        Offset(longHandLength * 0.90 * cos(angle), longHandLength * sin(angle));\r\n+        Offset(longHandLength * 0.95 * cos(angle), longHandLength * sin(angle));\r\n     TextSpan span = TextSpan(style: style, text: h.toString());\r\n     TextPainter tp = TextPainter(\r\n       text: span,\r\n       // textAlign: TextAlign.center,\r\n"
                 }
             ],
             "date": 1643111608597,

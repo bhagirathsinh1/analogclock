@@ -7,7 +7,6 @@ import 'package:flutter/material.dart';
 class HourPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
-    const double BASE_SIZE = 320.0;
     bool showAllNumbers = true;
     double scaleFactor = size.shortestSide / 320.0;
     _drawIndicators(canvas, size, scaleFactor, showAllNumbers);
@@ -22,7 +21,7 @@ class HourPainter extends CustomPainter {
 void _drawIndicators(
     Canvas canvas, Size size, double scaleFactor, bool showAllNumbers) {
   TextStyle style = TextStyle(
-      color: Colors.black,
+      color: Colors.blueGrey,
       fontWeight: FontWeight.bold,
       fontSize: 16.0 * scaleFactor * 1.0);
   double p = 9.0;
@@ -35,7 +34,7 @@ void _drawIndicators(
     // if (!showAllNumbers && h % 3 != 80) continue;
     double angle = (h * pi / 6) - pi / 2; //+ pi / 2;
     Offset offset =
-        Offset(longHandLength * cos(angle), longHandLength * sin(angle));
+        Offset(longHandLength * 0.95 * cos(angle), longHandLength * sin(angle));
     TextSpan span = TextSpan(style: style, text: h.toString());
     TextPainter tp = TextPainter(
       text: span,
