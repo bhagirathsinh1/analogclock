@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 219,
+            "activePatchIndex": 225,
             "patches": [
                 {
                     "date": 1643022982541,
@@ -884,6 +884,30 @@
                 {
                     "date": 1643114800536,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,44 +8,12 @@\n   @override\r\n   void paint(Canvas canvas, Size size) {\r\n     double centerX = size.width / 2;\r\n     double centerY = size.height / 2;\r\n-    double radius = min(centerX, centerY);\r\n     Offset center = Offset(centerX, centerY);\r\n-    double outerRadius = radius - 20;\r\n-    double innerRdaius = radius - 30;\r\n+\r\n     DateTime dateTime = DateTime.now();\r\n \r\n-    //dashLine for second\r\n-    Paint secDashPaint = Paint()\r\n-      ..color = Colors.white\r\n-      ..strokeWidth = 3\r\n-      ..strokeCap = StrokeCap.round;\r\n-\r\n-    for (int i = 0; i < 360; i += 6) {\r\n-      double x1 = centerX - outerRadius * .95 * cos(i * pi / 180);\r\n-      double y1 = centerX - outerRadius * .95 * sin(i * pi / 180);\r\n-\r\n-      double x2 = centerX - innerRdaius * cos(i * pi / 180);\r\n-      double y2 = centerX - innerRdaius * sin(i * pi / 180);\r\n-\r\n-      canvas.drawLine(Offset(x1, y1), Offset(x2, y2), secDashPaint);\r\n-    }\r\n-    //dashLine for hour\r\n-    Paint hourDashPaint = Paint()\r\n-      ..color = Color(0xFF222E63)\r\n-      ..strokeWidth = 4\r\n-      ..strokeCap = StrokeCap.round;\r\n-\r\n-    for (int i = 0; i < 360; i += 30) {\r\n-      double x1 = centerX - outerRadius * cos(i * pi / 180);\r\n-      double y1 = centerX - outerRadius * sin(i * pi / 180);\r\n-\r\n-      double x2 = centerX - innerRdaius * cos(i * pi / 180);\r\n-      double y2 = centerX - innerRdaius * sin(i * pi / 180);\r\n-\r\n-      canvas.drawLine(Offset(x1, y1), Offset(x2, y2), hourDashPaint);\r\n-    }\r\n //second hand paint\r\n     var secHandBrush = Paint()\r\n       ..color = Color(0xFFE81466)\r\n       ..strokeWidth = 3\r\n"
+                },
+                {
+                    "date": 1643115673822,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,9 @@\n     canvas.drawLine(center, Offset(minHandX, minHandY), minHandBrush);\r\n \r\n //hour hand paint\r\n     var hourHandBrush = Paint()\r\n-      ..color = Color(0xFF222E63)\r\n+      ..color = Colors.blueAccent\r\n       ..strokeWidth = 6\r\n       ..strokeCap = StrokeCap.round\r\n       ..style = PaintingStyle.stroke;\r\n     var hourHandX = centerX +\r\n"
+                },
+                {
+                    "date": 1643115687510,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,9 @@\n     canvas.drawLine(center, Offset(minHandX, minHandY), minHandBrush);\r\n \r\n //hour hand paint\r\n     var hourHandBrush = Paint()\r\n-      ..color = Colors.blueAccent\r\n+      ..color = Colors.blue\r\n       ..strokeWidth = 6\r\n       ..strokeCap = StrokeCap.round\r\n       ..style = PaintingStyle.stroke;\r\n     var hourHandX = centerX +\r\n"
+                },
+                {
+                    "date": 1643115693542,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,9 @@\n     canvas.drawLine(center, Offset(minHandX, minHandY), minHandBrush);\r\n \r\n //hour hand paint\r\n     var hourHandBrush = Paint()\r\n-      ..color = Colors.blue\r\n+      ..color = Color(0xFF222E63)\r\n       ..strokeWidth = 6\r\n       ..strokeCap = StrokeCap.round\r\n       ..style = PaintingStyle.stroke;\r\n     var hourHandX = centerX +\r\n"
+                },
+                {
+                    "date": 1643115803171,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,9 @@\n     canvas.drawLine(center, Offset(minHandX, minHandY), minHandBrush);\r\n \r\n //hour hand paint\r\n     var hourHandBrush = Paint()\r\n-      ..color = Color(0xFF222E63)\r\n+      ..color = Colors.black\r\n       ..strokeWidth = 6\r\n       ..strokeCap = StrokeCap.round\r\n       ..style = PaintingStyle.stroke;\r\n     var hourHandX = centerX +\r\n"
+                },
+                {
+                    "date": 1643115820999,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n     canvas.drawLine(center, Offset(secHandX, secHandY), secHandBrush);\r\n \r\n //minute hand paint\r\n     var minHandBrush = Paint()\r\n-      ..color = Color(0xFFBEC5D5)\r\n+      ..color = Colors.grey\r\n       ..strokeWidth = 4\r\n       ..strokeCap = StrokeCap.round\r\n       ..style = PaintingStyle.stroke;\r\n     var minHandX = centerX + 80 * cos(dateTime.minute * 6 * pi / 180);\r\n"
+                },
+                {
+                    "date": 1643115839549,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,6 @@\n // ignore_for_file: prefer_const_constructors\r\n-\r\n import 'dart:math';\r\n-\r\n import 'package:flutter/material.dart';\r\n \r\n class ClockPainter extends CustomPainter {\r\n   @override\r\n"
                 }
             ],
             "date": 1643022982541,

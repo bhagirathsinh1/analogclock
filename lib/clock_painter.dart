@@ -1,7 +1,5 @@
 // ignore_for_file: prefer_const_constructors
-
 import 'dart:math';
-
 import 'package:flutter/material.dart';
 
 class ClockPainter extends CustomPainter {
@@ -27,7 +25,7 @@ class ClockPainter extends CustomPainter {
 
 //minute hand paint
     var minHandBrush = Paint()
-      ..color = Color(0xFFBEC5D5)
+      ..color = Colors.grey
       ..strokeWidth = 4
       ..strokeCap = StrokeCap.round
       ..style = PaintingStyle.stroke;
@@ -37,7 +35,7 @@ class ClockPainter extends CustomPainter {
 
 //hour hand paint
     var hourHandBrush = Paint()
-      ..color = Color(0xFF222E63)
+      ..color = Colors.black
       ..strokeWidth = 6
       ..strokeCap = StrokeCap.round
       ..style = PaintingStyle.stroke;

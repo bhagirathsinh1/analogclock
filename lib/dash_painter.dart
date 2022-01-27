@@ -30,7 +30,7 @@ class DashPainter extends CustomPainter {
     }
     //dashLine for hour
     Paint hourDashPaint = Paint()
-      ..color = Color(0xFF222E63)
+      ..color = Colors.black
       ..strokeWidth = 4
       ..strokeCap = StrokeCap.round;
 
