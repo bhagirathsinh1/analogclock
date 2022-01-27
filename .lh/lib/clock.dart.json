@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 136,
+            "activePatchIndex": 146,
             "patches": [
                 {
                     "date": 1643014287416,
@@ -552,6 +552,46 @@
                 {
                     "date": 1643114875864,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -79,18 +79,8 @@\n                 ),\r\n               ],\r\n             ),\r\n           ),\r\n-          Container(\r\n-            // color: Colors.red,\r\n-            constraints: BoxConstraints.expand(),\r\n-            child: RotatedBox(\r\n-              quarterTurns: 4,\r\n-              child: CustomPaint(\r\n-                painter: DashPainter(),\r\n-              ),\r\n-            ),\r\n-          ),\r\n           Transform.rotate(\r\n             angle: -pi / 2,\r\n             child: Container(\r\n               // color: Colors.red,\r\n@@ -105,8 +95,18 @@\n             constraints: BoxConstraints.expand(),\r\n             child: RotatedBox(\r\n               quarterTurns: 4,\r\n               child: CustomPaint(\r\n+                painter: DashPainter(),\r\n+              ),\r\n+            ),\r\n+          ),\r\n+          Container(\r\n+            // color: Colors.red,\r\n+            constraints: BoxConstraints.expand(),\r\n+            child: RotatedBox(\r\n+              quarterTurns: 4,\r\n+              child: CustomPaint(\r\n                 painter: HourPainter(),\r\n               ),\r\n             ),\r\n           ),\r\n"
+                },
+                {
+                    "date": 1643259370266,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n                 colors: [Color(0xFFE3F0F8), Color(0xFFEEF5FD)],\r\n               ),\r\n               boxShadow: [\r\n                 BoxShadow(\r\n-                  color: Color(0xFF3F6080).withOpacity(.2),\r\n+                  color: Colors.purple,\r\n                   blurRadius: 32,\r\n                   offset: Offset(10, 5),\r\n                 ),\r\n                 BoxShadow(\r\n"
+                },
+                {
+                    "date": 1643259377753,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n                 colors: [Color(0xFFE3F0F8), Color(0xFFEEF5FD)],\r\n               ),\r\n               boxShadow: [\r\n                 BoxShadow(\r\n-                  color: Colors.purple,\r\n+                  color: Colors.blue,\r\n                   blurRadius: 32,\r\n                   offset: Offset(10, 5),\r\n                 ),\r\n                 BoxShadow(\r\n"
+                },
+                {
+                    "date": 1643259391397,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n                 colors: [Color(0xFFE3F0F8), Color(0xFFEEF5FD)],\r\n               ),\r\n               boxShadow: [\r\n                 BoxShadow(\r\n-                  color: Colors.blue,\r\n+                  color: Colors.blueGrey,\r\n                   blurRadius: 32,\r\n                   offset: Offset(10, 5),\r\n                 ),\r\n                 BoxShadow(\r\n"
+                },
+                {
+                    "date": 1643259420917,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,9 +39,9 @@\n               shape: BoxShape.circle,\r\n               gradient: LinearGradient(\r\n                 begin: Alignment.topLeft,\r\n                 end: Alignment.bottomRight,\r\n-                colors: [Color(0xFFE3F0F8), Color(0xFFEEF5FD)],\r\n+                colors: [Colors.blueGrey, Color(0xFFEEF5FD)],\r\n               ),\r\n               boxShadow: [\r\n                 BoxShadow(\r\n                   color: Colors.blueGrey,\r\n"
+                },
+                {
+                    "date": 1643259432637,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,9 +39,9 @@\n               shape: BoxShape.circle,\r\n               gradient: LinearGradient(\r\n                 begin: Alignment.topLeft,\r\n                 end: Alignment.bottomRight,\r\n-                colors: [Colors.blueGrey, Color(0xFFEEF5FD)],\r\n+                colors: [Colors.white, Color(0xFFEEF5FD)],\r\n               ),\r\n               boxShadow: [\r\n                 BoxShadow(\r\n                   color: Colors.blueGrey,\r\n"
+                },
+                {
+                    "date": 1643259441593,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,9 +39,9 @@\n               shape: BoxShape.circle,\r\n               gradient: LinearGradient(\r\n                 begin: Alignment.topLeft,\r\n                 end: Alignment.bottomRight,\r\n-                colors: [Colors.white, Color(0xFFEEF5FD)],\r\n+                colors: [Color(0xFFE3F0F8), Color(0xFFEEF5FD)],\r\n               ),\r\n               boxShadow: [\r\n                 BoxShadow(\r\n                   color: Colors.blueGrey,\r\n"
+                },
+                {
+                    "date": 1643259451397,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,9 +39,9 @@\n               shape: BoxShape.circle,\r\n               gradient: LinearGradient(\r\n                 begin: Alignment.topLeft,\r\n                 end: Alignment.bottomRight,\r\n-                colors: [Color(0xFFE3F0F8), Color(0xFFEEF5FD)],\r\n+                colors: [Color(0xFFE3F0F8), Colors.white\r\n               ),\r\n               boxShadow: [\r\n                 BoxShadow(\r\n                   color: Colors.blueGrey,\r\n"
+                },
+                {
+                    "date": 1643259463436,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,12 +37,11 @@\n             constraints: BoxConstraints.expand(),\r\n             decoration: BoxDecoration(\r\n               shape: BoxShape.circle,\r\n               gradient: LinearGradient(\r\n-                begin: Alignment.topLeft,\r\n-                end: Alignment.bottomRight,\r\n-                colors: [Color(0xFFE3F0F8), Colors.white\r\n-              ),\r\n+                  begin: Alignment.topLeft,\r\n+                  end: Alignment.bottomRight,\r\n+                  colors: [Color(0xFFE3F0F8), Colors.white]),\r\n               boxShadow: [\r\n                 BoxShadow(\r\n                   color: Colors.blueGrey,\r\n                   blurRadius: 32,\r\n"
+                },
+                {
+                    "date": 1643259473925,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,11 +37,12 @@\n             constraints: BoxConstraints.expand(),\r\n             decoration: BoxDecoration(\r\n               shape: BoxShape.circle,\r\n               gradient: LinearGradient(\r\n-                  begin: Alignment.topLeft,\r\n-                  end: Alignment.bottomRight,\r\n-                  colors: [Color(0xFFE3F0F8), Colors.white]),\r\n+                begin: Alignment.topLeft,\r\n+                end: Alignment.bottomRight,\r\n+                colors: [Color(0xFFE3F0F8), Color(0xFFEEF5FD)],\r\n+              ),\r\n               boxShadow: [\r\n                 BoxShadow(\r\n                   color: Colors.blueGrey,\r\n                   blurRadius: 32,\r\n"
+                },
+                {
+                    "date": 1643259554408,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -48,9 +48,9 @@\n                   blurRadius: 32,\r\n                   offset: Offset(10, 5),\r\n                 ),\r\n                 BoxShadow(\r\n-                  color: Colors.white,\r\n+                  color: Color(0x8AFFFFFF),\r\n                   blurRadius: 32,\r\n                   offset: Offset(-10, -5),\r\n                 ),\r\n               ],\r\n"
                 }
             ],
             "date": 1643014287416,

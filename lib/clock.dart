@@ -44,12 +44,12 @@ class _ClockState extends State<Clock> {
               ),
               boxShadow: [
                 BoxShadow(
-                  color: Color(0xFF3F6080).withOpacity(.2),
+                  color: Colors.blueGrey,
                   blurRadius: 32,
                   offset: Offset(10, 5),
                 ),
                 BoxShadow(
-                  color: Colors.white,
+                  color: Color(0x8AFFFFFF),
                   blurRadius: 32,
                   offset: Offset(-10, -5),
                 ),
