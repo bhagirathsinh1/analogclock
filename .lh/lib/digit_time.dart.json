@@ -1,0 +1,74 @@
+{
+    "sourceFile": "lib/digit_time.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 14,
+            "patches": [
+                {
+                    "date": 1643357505263,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1643357536398,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-// ignore_for_file: prefer_const_constructors\r\n+// ignore_for_file: prefer_const_constructors, must_be_immutable\r\n \r\n import 'package:flutter/material.dart';\r\n \r\n class DigitTime extends StatelessWidget {\r\n"
+                },
+                {
+                    "date": 1643369010952,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,18 +2,18 @@\n \r\n import 'package:flutter/material.dart';\r\n \r\n class DigitTime extends StatelessWidget {\r\n-  DigitTime({Key? key, required this.timeOfDay, required this.period})\r\n+  DigitTime({Key? key, required this.now, required this.period})\r\n       : super(key: key);\r\n   String period;\r\n-  TimeOfDay timeOfDay;\r\n+  DateTime now;\r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return Row(\r\n       mainAxisAlignment: MainAxisAlignment.center,\r\n       children: [\r\n-        Text('${timeOfDay.hourOfPeriod}:${timeOfDay.minute} ',\r\n+        Text('${now.hour}:${now.minute} ',\r\n             style: TextStyle(color: Colors.blueGrey, fontSize: 40)),\r\n         Text(\r\n           period,\r\n           style: TextStyle(fontSize: 10, color: Colors.blueGrey),\r\n"
+                },
+                {
+                    "date": 1643369157669,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,18 +2,18 @@\n \r\n import 'package:flutter/material.dart';\r\n \r\n class DigitTime extends StatelessWidget {\r\n-  DigitTime({Key? key, required this.now, required this.period})\r\n+  DigitTime({Key? key, required this.currentTime, required this.period})\r\n       : super(key: key);\r\n   String period;\r\n-  DateTime now;\r\n+  DateTime currentTime;\r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return Row(\r\n       mainAxisAlignment: MainAxisAlignment.center,\r\n       children: [\r\n-        Text('${now.hour}:${now.minute} ',\r\n+        Text('${currentTime.hour}:${currentTime.minute} ',\r\n             style: TextStyle(color: Colors.blueGrey, fontSize: 40)),\r\n         Text(\r\n           period,\r\n           style: TextStyle(fontSize: 10, color: Colors.blueGrey),\r\n"
+                },
+                {
+                    "date": 1643374842602,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,14 +6,15 @@\n   DigitTime({Key? key, required this.currentTime, required this.period})\r\n       : super(key: key);\r\n   String period;\r\n   DateTime currentTime;\r\n+\r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return Row(\r\n       mainAxisAlignment: MainAxisAlignment.center,\r\n       children: [\r\n-        Text('${currentTime.hour}:${currentTime.minute} ',\r\n+        Text(DateFormat.jm().format(DateTime.parse(period)),\r\n             style: TextStyle(color: Colors.blueGrey, fontSize: 40)),\r\n         Text(\r\n           period,\r\n           style: TextStyle(fontSize: 10, color: Colors.blueGrey),\r\n"
+                },
+                {
+                    "date": 1643374870166,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n // ignore_for_file: prefer_const_constructors, must_be_immutable\r\n \r\n import 'package:flutter/material.dart';\r\n+import 'package:intl/intl.dart';\r\n \r\n class DigitTime extends StatelessWidget {\r\n   DigitTime({Key? key, required this.currentTime, required this.period})\r\n       : super(key: key);\r\n"
+                },
+                {
+                    "date": 1643374921074,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,15 +7,16 @@\n   DigitTime({Key? key, required this.currentTime, required this.period})\r\n       : super(key: key);\r\n   String period;\r\n   DateTime currentTime;\r\n+  String timeStamp24HR = \"2020-07-20T18:15:12\";\r\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return Row(\r\n       mainAxisAlignment: MainAxisAlignment.center,\r\n       children: [\r\n-        Text(DateFormat.jm().format(DateTime.parse(period)),\r\n+        Text(DateFormat.jm().format(DateTime.parse(timeStamp24HR)),\r\n             style: TextStyle(color: Colors.blueGrey, fontSize: 40)),\r\n         Text(\r\n           period,\r\n           style: TextStyle(fontSize: 10, color: Colors.blueGrey),\r\n"
+                },
+                {
+                    "date": 1643374969003,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,22 +1,19 @@\n // ignore_for_file: prefer_const_constructors, must_be_immutable\r\n \r\n import 'package:flutter/material.dart';\r\n-import 'package:intl/intl.dart';\r\n \r\n class DigitTime extends StatelessWidget {\r\n   DigitTime({Key? key, required this.currentTime, required this.period})\r\n       : super(key: key);\r\n   String period;\r\n   DateTime currentTime;\r\n-  String timeStamp24HR = \"2020-07-20T18:15:12\";\r\n-\r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return Row(\r\n       mainAxisAlignment: MainAxisAlignment.center,\r\n       children: [\r\n-        Text(DateFormat.jm().format(DateTime.parse(timeStamp24HR)),\r\n+        Text('${currentTime.isUtc}:${currentTime.minute} ',\r\n             style: TextStyle(color: Colors.blueGrey, fontSize: 40)),\r\n         Text(\r\n           period,\r\n           style: TextStyle(fontSize: 10, color: Colors.blueGrey),\r\n"
+                },
+                {
+                    "date": 1643374978002,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n   Widget build(BuildContext context) {\r\n     return Row(\r\n       mainAxisAlignment: MainAxisAlignment.center,\r\n       children: [\r\n-        Text('${currentTime.isUtc}:${currentTime.minute} ',\r\n+        Text('${currentTime.microsecond}:${currentTime.minute} ',\r\n             style: TextStyle(color: Colors.blueGrey, fontSize: 40)),\r\n         Text(\r\n           period,\r\n           style: TextStyle(fontSize: 10, color: Colors.blueGrey),\r\n"
+                },
+                {
+                    "date": 1643374991598,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n   Widget build(BuildContext context) {\r\n     return Row(\r\n       mainAxisAlignment: MainAxisAlignment.center,\r\n       children: [\r\n-        Text('${currentTime.microsecond}:${currentTime.minute} ',\r\n+        Text('${currentTime.timeZoneOffset}:${currentTime.minute} ',\r\n             style: TextStyle(color: Colors.blueGrey, fontSize: 40)),\r\n         Text(\r\n           period,\r\n           style: TextStyle(fontSize: 10, color: Colors.blueGrey),\r\n"
+                },
+                {
+                    "date": 1643375014489,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n   Widget build(BuildContext context) {\r\n     return Row(\r\n       mainAxisAlignment: MainAxisAlignment.center,\r\n       children: [\r\n-        Text('${currentTime.timeZoneOffset}:${currentTime.minute} ',\r\n+        Text('${currentTime.hashCode}:${currentTime.minute} ',\r\n             style: TextStyle(color: Colors.blueGrey, fontSize: 40)),\r\n         Text(\r\n           period,\r\n           style: TextStyle(fontSize: 10, color: Colors.blueGrey),\r\n"
+                },
+                {
+                    "date": 1643375026028,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n   Widget build(BuildContext context) {\r\n     return Row(\r\n       mainAxisAlignment: MainAxisAlignment.center,\r\n       children: [\r\n-        Text('${currentTime.hashCode}:${currentTime.minute} ',\r\n+        Text('${currentTime.hour}:${currentTime.minute} ',\r\n             style: TextStyle(color: Colors.blueGrey, fontSize: 40)),\r\n         Text(\r\n           period,\r\n           style: TextStyle(fontSize: 10, color: Colors.blueGrey),\r\n"
+                },
+                {
+                    "date": 1643375886226,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n   Widget build(BuildContext context) {\r\n     return Row(\r\n       mainAxisAlignment: MainAxisAlignment.center,\r\n       children: [\r\n-        Text('${currentTime.hour}:${currentTime.minute} ',\r\n+        Text(currentTime,\r\n             style: TextStyle(color: Colors.blueGrey, fontSize: 40)),\r\n         Text(\r\n           period,\r\n           style: TextStyle(fontSize: 10, color: Colors.blueGrey),\r\n"
+                },
+                {
+                    "date": 1643375912021,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n   Widget build(BuildContext context) {\r\n     return Row(\r\n       mainAxisAlignment: MainAxisAlignment.center,\r\n       children: [\r\n-        Text(currentTime,\r\n+        Text(currentTime.toString(),\r\n             style: TextStyle(color: Colors.blueGrey, fontSize: 40)),\r\n         Text(\r\n           period,\r\n           style: TextStyle(fontSize: 10, color: Colors.blueGrey),\r\n"
+                },
+                {
+                    "date": 1643375925832,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n   Widget build(BuildContext context) {\r\n     return Row(\r\n       mainAxisAlignment: MainAxisAlignment.center,\r\n       children: [\r\n-        Text(currentTime.toString(),\r\n+        Text('${currentTime.hour}:${currentTime.minute} ',\r\n             style: TextStyle(color: Colors.blueGrey, fontSize: 40)),\r\n         Text(\r\n           period,\r\n           style: TextStyle(fontSize: 10, color: Colors.blueGrey),\r\n"
+                }
+            ],
+            "date": 1643357505263,
+            "name": "Commit-0",
+            "content": "// ignore_for_file: prefer_const_constructors\r\n\r\nimport 'package:flutter/material.dart';\r\n\r\nclass DigitTime extends StatelessWidget {\r\n  DigitTime({Key? key, required this.timeOfDay, required this.period})\r\n      : super(key: key);\r\n  String period;\r\n  TimeOfDay timeOfDay;\r\n  @override\r\n  Widget build(BuildContext context) {\r\n    return Row(\r\n      mainAxisAlignment: MainAxisAlignment.center,\r\n      children: [\r\n        Text('${timeOfDay.hourOfPeriod}:${timeOfDay.minute} ',\r\n            style: TextStyle(color: Colors.blueGrey, fontSize: 40)),\r\n        Text(\r\n          period,\r\n          style: TextStyle(fontSize: 10, color: Colors.blueGrey),\r\n        ),\r\n      ],\r\n    );\r\n  }\r\n}\r\n"
+        }
+    ]
+}

@@ -3,13 +3,13 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 
 class ClockPainter extends CustomPainter {
+  ClockPainter({Key? key, required this.currentTime});
+  DateTime currentTime;
   @override
   void paint(Canvas canvas, Size size) {
     double centerX = size.width / 2;
     double centerY = size.height / 2;
     Offset center = Offset(centerX, centerY);
-
-    DateTime dateTime = DateTime.now();
 
 //second hand paint
     var secHandBrush = Paint()
@@ -18,8 +18,8 @@ class ClockPainter extends CustomPainter {
       ..strokeCap = StrokeCap.round
       ..style = PaintingStyle.stroke;
     //60 sec-360,1 sec =6 degree
-    var secHandX = centerX + 80 * cos(dateTime.second * 6 * pi / 180);
-    var secHandY = centerX + 80 * sin(dateTime.second * 6 * pi / 180);
+    var secHandX = centerX + 80 * cos(currentTime.second * 6 * pi / 180);
+    var secHandY = centerX + 80 * sin(currentTime.second * 6 * pi / 180);
 
     canvas.drawLine(center, Offset(secHandX, secHandY), secHandBrush);
 
@@ -29,8 +29,8 @@ class ClockPainter extends CustomPainter {
       ..strokeWidth = 4
       ..strokeCap = StrokeCap.round
       ..style = PaintingStyle.stroke;
-    var minHandX = centerX + 80 * cos(dateTime.minute * 6 * pi / 180);
-    var minHandY = centerX + 80 * sin(dateTime.minute * 6 * pi / 180);
+    var minHandX = centerX + 80 * cos(currentTime.minute * 6 * pi / 180);
+    var minHandY = centerX + 80 * sin(currentTime.minute * 6 * pi / 180);
     canvas.drawLine(center, Offset(minHandX, minHandY), minHandBrush);
 
 //hour hand paint
@@ -40,9 +40,9 @@ class ClockPainter extends CustomPainter {
       ..strokeCap = StrokeCap.round
       ..style = PaintingStyle.stroke;
     var hourHandX = centerX +
-        60 * cos((dateTime.hour * 30 + dateTime.minute * 0.5) * pi / 180);
+        60 * cos((currentTime.hour * 30 + currentTime.minute * 0.5) * pi / 180);
     var hourHandY = centerX +
-        60 * sin((dateTime.hour * 30 + dateTime.minute * 0.5) * pi / 180);
+        60 * sin((currentTime.hour * 30 + currentTime.minute * 0.5) * pi / 180);
     canvas.drawLine(center, Offset(hourHandX, hourHandY), hourHandBrush);
 
     Paint centerCirclePaint = Paint()..color = Color(0xFFE81466);

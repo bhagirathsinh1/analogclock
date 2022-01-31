@@ -1,0 +1,26 @@
+{
+    "sourceFile": "lib/clock painter/widget_clock_painter.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1643351233627,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1643351279108,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,24 @@\n+// ignore_for_file: prefer_const_constructors\r\n+\r\n+import 'dart:math';\r\n+\r\n+import 'package:analogclock/clock%20painter/clock_painter.dart';\r\n import 'package:flutter/material.dart';\r\n \r\n class ClockPainterWidget extends StatelessWidget {\r\n   const ClockPainterWidget({Key? key}) : super(key: key);\r\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n-    return Container();\r\n+    return Transform.rotate(\r\n+      angle: -pi / 2,\r\n+      child: Container(\r\n+        // color: Colors.red,\r\n+        constraints: BoxConstraints.expand(),\r\n+        child: CustomPaint(\r\n+          painter: ClockPainter(),\r\n+        ),\r\n+      ),\r\n+    );\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1643374422943,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,10 @@\n import 'package:analogclock/clock%20painter/clock_painter.dart';\r\n import 'package:flutter/material.dart';\r\n \r\n class ClockPainterWidget extends StatelessWidget {\r\n-  const ClockPainterWidget({Key? key}) : super(key: key);\r\n+  ClockPainterWidget({Key? key, required this.currentTime}) : super(key: key);\r\n+  DateTime currentTime;\r\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return Transform.rotate(\r\n@@ -15,9 +16,9 @@\n       child: Container(\r\n         // color: Colors.red,\r\n         constraints: BoxConstraints.expand(),\r\n         child: CustomPaint(\r\n-          painter: ClockPainter(),\r\n+          painter: ClockPainter(currentTime: currentTime),\r\n         ),\r\n       ),\r\n     );\r\n   }\r\n"
+                }
+            ],
+            "date": 1643351233627,
+            "name": "Commit-0",
+            "content": "import 'package:flutter/material.dart';\r\n\r\nclass ClockPainterWidget extends StatelessWidget {\r\n  const ClockPainterWidget({Key? key}) : super(key: key);\r\n\r\n  @override\r\n  Widget build(BuildContext context) {\r\n    return Container();\r\n  }\r\n}\r\n"
+        }
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "sourceFile": "lib/dial/inner_dial.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1643357223595,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1643357277700,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,38 @@\n+// ignore_for_file: prefer_const_constructors\r\n+\r\n import 'package:flutter/material.dart';\r\n \r\n class InnerDial extends StatelessWidget {\r\n-  const InnerDial({Key? key}) : super(key: key);\r\n+  InnerDial({Key? key, required this.dark}) : super(key: key);\r\n+  bool dark;\r\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n-    return Container();\r\n+    return Container(\r\n+      width: 220,\r\n+      height: 220,\r\n+      decoration: BoxDecoration(\r\n+        shape: BoxShape.circle,\r\n+        gradient: LinearGradient(\r\n+          begin: Alignment.topLeft,\r\n+          end: Alignment.bottomRight,\r\n+          colors: dark\r\n+              ? [Colors.black87, Colors.black45]\r\n+              : [Color(0xFFCFD8DC), Color(0xFFEEF5FD)],\r\n+        ),\r\n+        boxShadow: [\r\n+          BoxShadow(\r\n+            color: Color(0xFF3F6080).withOpacity(.2),\r\n+            blurRadius: 30,\r\n+            offset: Offset(20, 20),\r\n+          ),\r\n+          BoxShadow(\r\n+            color: Colors.blueGrey,\r\n+            blurRadius: 20,\r\n+            offset: Offset(-0, -0),\r\n+          ),\r\n+        ],\r\n+      ),\r\n+    );\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1643366856407,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-// ignore_for_file: prefer_const_constructors\r\n+// ignore_for_file: prefer_const_constructors, must_be_immutable\r\n \r\n import 'package:flutter/material.dart';\r\n \r\n class InnerDial extends StatelessWidget {\r\n"
+                }
+            ],
+            "date": 1643357223595,
+            "name": "Commit-0",
+            "content": "import 'package:flutter/material.dart';\r\n\r\nclass InnerDial extends StatelessWidget {\r\n  const InnerDial({Key? key}) : super(key: key);\r\n\r\n  @override\r\n  Widget build(BuildContext context) {\r\n    return Container();\r\n  }\r\n}\r\n"
+        }
+    ]
+}
