@@ -49,7 +49,7 @@ class _ClockState extends State<Clock> {
   Widget build(BuildContext context) {
     var detroit = tz1.getLocation(locationName);
     DateTime currentTime = tz1.TZDateTime.now(detroit);
-    var _period = new DateFormat(':a').format(tz1.TZDateTime.now(detroit));
+    String _period = new DateFormat('a').format(tz1.TZDateTime.now(detroit));
 
     return SafeArea(
       child: Scaffold(
